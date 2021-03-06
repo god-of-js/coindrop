@@ -1,6 +1,6 @@
 <template>
   <div class="text-left">
-    <label for="" v-if="label" class="pb-1">{{ label }}</label>
+    <label for="" v-if="label">{{ label }}</label>
     <input
       :type="type"
       :placeholder="placeholder"
@@ -33,16 +33,17 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/styles/colors.scss";
 label {
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 input {
-  width: 100%;
   height: 36px;
+  width: 100%;
   padding-left: 6px;
   background: $primary-white;
   border-radius: 5px;
   outline: none;
   border: 1px solid $border-color;
+  box-sizing: border-box;
   font-size: 1em;
   ::placeholder {
     color: $border-color;

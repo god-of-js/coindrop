@@ -19,11 +19,13 @@ export default {
 #nav {
   background: $primary-dark-color;
   padding: 15px;
+  padding-left: 5%;
   text-align: left;
   .nav-name {
     color: $gold-text;
     font-weight: 900;
     font-size: 1.3em;
+    text-transform: uppercase;
   }
 }
 </style>

@@ -30,49 +30,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import "../assets/styles/colors.scss";
+@import "../../assets/styles/colors.scss";
 
-// .default-button {
-//   width: 100%;
-//   padding: 10px;
-//   height: 56px;
-//   outline: none;
-//   background: $green;
-//   color: $white;
-//   box-sizing: border-box;
-//   border-radius: 4px;
-//   border: transparent;
-//   font-size: 0.9em;
-//   cursor: pointer;
-//   &:active {
-//     transform: scale(1.04, 1.03);
-//   }
-// }
-// .btn-disabled {
-//   opacity: 0.6;
-//   cursor: not-allowed;
-// }
-
-// .close-btn:hover {
-//   background-color: $dark-color;
-//   color: $white;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 25px;
-//   height: 25px;
-//   ::v-deep {
-//     #test-02 {
-//       fill: $white;
-//     }
-//   }
-// }
-// .text {
-//   font-size: 0.9em;
-//   background: transparent;
-//   border: transparent;
-//   outline: none;
-//   cursor: pointer;
-//   float: left;
-// }
+.default-button {
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  outline: none;
+  background: $primary-button-color;
+  color: $black-text;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: transparent;
+  font-size: 0.9em;
+  font-weight: 550;
+  cursor: pointer;
+  &:active {
+    transform: scale(1.04, 1.03);
+  }
+  &:hover {
+    background: $primary-button-hover-color;
+  }
+}
+.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.text {
+  font-size: 0.9em;
+  background: transparent;
+  border: transparent;
+  outline: none;
+  cursor: pointer;
+  float: left;
+}
 </style>
