@@ -12,8 +12,8 @@
 <script>
 export default {
   components: {
-    TopNav: () => import("@/components/authentication/TopNav.vue"),
-  },
+    TopNav: () => import("@/components/authentication/TopNav.vue")
+  }
 };
 </script>
 
@@ -33,7 +33,7 @@ export default {
   }
   &__card {
     background: $primary-white;
-    width: 30%;
+    width: 27%;
     padding: 20px;
     @include box-shadow();
   }

@@ -1,9 +1,13 @@
 <template>
-  <input
-    class="pa-3"
-    v-on="$listeners"
-    @input="$emit('update', $event.target.value)"
-  />
+  <div class="text-left">
+    <label for="" v-if="label" class="pb-1">{{ label }}</label>
+    <input
+      :type="type"
+      :placeholder="placeholder"
+      v-model="value"
+      @input="$emit('data', value)"
+    />
+  </div>
 </template>
 
 <script>
@@ -13,10 +17,14 @@ export default {
     prop: "value",
     event: "update"
   },
+  data: () => {
+    return {
+      value: ""
+    };
+  },
   props: {
-    value: {
-      type: [String, Number],
-      required: true
+    label: {
+      type: String
     }
   }
 };
@@ -24,13 +32,18 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/styles/colors.scss";
+label {
+  font-size: 0.8em;
+}
 input {
   width: 100%;
-  background: #ffffff;
+  height: 36px;
+  padding-left: 6px;
+  background: $primary-white;
   border-radius: 5px;
   outline: none;
   border: 1px solid $border-color;
-  font-size: 0.7em;
+  font-size: 1em;
   ::placeholder {
     color: $border-color;
   }

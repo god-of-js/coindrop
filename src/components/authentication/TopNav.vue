@@ -1,11 +1,17 @@
 <template>
   <div id="nav" class="">
-    <div class="nav-name">Crypto</div>
+    <div class="nav-name" v-text="appName" />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    appName() {
+      return this.$store.state.app.appName;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

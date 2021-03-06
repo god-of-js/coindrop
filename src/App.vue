@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+@import "./assets/styles/utility.scss";
 @font-face {
   font-family: Montserrat;
   src: url("./assets/fonts/Montserrat/Montserrat-Medium.ttf");
