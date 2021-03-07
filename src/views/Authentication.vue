@@ -1,12 +1,12 @@
 <template>
-  <div class="authentication">
+  <main class="authentication">
     <top-nav />
     <div class="authentication__card-container">
       <div class="authentication__card">
         <router-view></router-view>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -20,6 +20,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/styles/colors.scss";
 @import "../assets/styles/mixins.scss";
+@import "../assets/styles/sizes.scss";
 .authentication {
   background-color: $secondary-background;
   min-height: 100vh;
@@ -36,6 +37,27 @@ export default {
     width: 27%;
     padding: 20px;
     @include box-shadow();
+  }
+}
+@media screen and (max-width: $tablet) {
+  .authentication {
+    &__card {
+      width: 35%;
+    }
+  }
+}
+@media screen and (max-width: $tablet-small-width) {
+  .authentication {
+    &__card {
+      width: 45%;
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .authentication {
+    &__card {
+      width: 80%;
+    }
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="text-left">
     <label for="" v-if="label">{{ label }}</label>
     <input
-      :type="type"
+      :type="inputType"
       :placeholder="placeholder"
       v-model="value"
       @input="$emit('data', value)"
@@ -25,6 +25,13 @@ export default {
   props: {
     label: {
       type: String
+    },
+    placeholder: {
+      type: String
+    },
+    inputType: {
+      type: String,
+      default: "text"
     }
   }
 };

@@ -1,7 +1,7 @@
 <template>
-  <div id="nav" class="">
-    <div class="nav-name" v-text="appName" />
-  </div>
+  <nav id="nav" class="">
+    <span class="nav-name" v-text="appName" />
+  </nav>
 </template>
 
 <script>
