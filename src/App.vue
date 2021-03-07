@@ -1,32 +1,17 @@
 <template>
-  <div id="app">
+  <v-app>
     <router-view />
-  </div>
+  </v-app>
 </template>
 
-<style lang="scss">
-@import "./assets/styles/utility.scss";
-@font-face {
-  font-family: Montserrat;
-  src: url("./assets/fonts/Montserrat/Montserrat-Medium.ttf");
-}
-#app {
-  font-family: Montserrat;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+<script>
+export default {
+  name: "App",
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  components: {},
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  data: () => ({
+    //
+  })
+};
+</script>

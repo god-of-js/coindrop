@@ -1,7 +1,8 @@
 <template>
   <main>
     <top-nav />
-    <div>
+    <div class="d-flex">
+      <side-nav />
       <router-view />
     </div>
   </main>
@@ -10,7 +11,9 @@
 <script>
 export default {
   components: {
-    TopNav: () => import("@/components/dashboard-layout-components/TopNav.vue")
+    TopNav: () => import("@/components/dashboard-layout-components/TopNav.vue"),
+    SideNav: () =>
+      import("@/components/dashboard-layout-components/SideNav.vue")
   }
 };
 </script>
