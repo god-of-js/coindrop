@@ -1,7 +1,7 @@
 <template>
   <main>
     <top-nav />
-    <div class="d-flex">
+    <div class="d-flex dashboard-content">
       <side-nav />
       <router-view />
     </div>
@@ -18,4 +18,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "../assets/styles/colors.scss";
+.dashboard-content {
+  background: $secondary-background;
+}
+</style>

@@ -1,9 +1,18 @@
 <template>
   <nav>
-    <ul>
-      <li v-for="(route, index) in routes" :key="index">
-        <v-icon>{{ route.icon }}</v-icon>
-        <span>{{ route.name }}</span>
+    <ul class="pa-0">
+      <li
+        v-for="(route, index) in routes"
+        :key="index"
+        :class="checkActiveRoute(route.path) ? 'active-route' : ''"
+      >
+        <router-link
+          class="pa-3 d-flex align-center route-link"
+          :to="route.path"
+        >
+          <v-icon class="mr-5 icon" color="#707A8A">{{ route.icon }}</v-icon>
+          <span>{{ route.name }}</span>
+        </router-link>
       </li>
     </ul>
   </nav>
@@ -36,18 +45,49 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    checkActiveRoute(path) {
+      return path === this.$route.path;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/styles/colors.scss";
 nav {
   height: 100%;
-  min-height: 90vh;
-  width: 20%;
+  min-height: 91vh;
+  width: 17%;
+  border-right: 1px solid #cfd2d4;
+  background: $primary-white;
+  box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px, rgb(0 0 0 / 8%) 0px 0px 4px;
   ul {
     li {
       list-style: none;
+      cursor: pointer;
+      border-left: 4px;
+      &:hover {
+        background: $hover-color;
+      }
+      span {
+        font-size: 0.8em;
+        color: $text-grey;
+      }
+      .route-link {
+        text-decoration: none;
+      }
+      &.active-route {
+        background: $hover-color;
+        border-left: 4px solid $gold-text;
+        .icon {
+          color: $gold-text !important;
+        }
+        span {
+          color: $gold-text;
+        }
+      }
     }
   }
 }
