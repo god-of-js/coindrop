@@ -1,23 +1,48 @@
 <template>
-  <div>
+  <main>
     <modal-wrap>
-      <component :is="activeModal" />
+      <div class="modal-card pa-5">
+        <button @click="closeModal">
+          <v-icon color="rgb(220, 20, 60)">mdi-close</v-icon>
+        </button>
+        <component :is="activeModal" />
+      </div>
     </modal-wrap>
-  </div>
+  </main>
 </template>
 
 <script>
 import ModalWrap from "./ModalWrap";
+import components from "./Components";
 export default {
   components: {
-    ModalWrap
+    ModalWrap,
+    ...components
   },
   computed: {
     activeModal() {
       return this.$store.state.modal.activeModal;
     }
+  },
+  methods: {
+    closeModal() {
+      this.$store.commit("modal/closeModal");
+    }
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "../../assets/styles/colors.scss";
+.modal-card {
+  background: $primary-white;
+  width: 35%;
+  border-radius: 5px;
+}
+button {
+  background: $primary-red;
+  border-radius: 2px;
+  float: right;
+  outline: none;
+}
+</style>

@@ -5,6 +5,7 @@
       <side-nav />
       <router-view />
     </div>
+    <modal v-if="modalIsActive" />
   </main>
 </template>
 
@@ -13,7 +14,13 @@ export default {
   components: {
     TopNav: () => import("@/components/dashboard-layout-components/TopNav.vue"),
     SideNav: () =>
-      import("@/components/dashboard-layout-components/SideNav.vue")
+      import("@/components/dashboard-layout-components/SideNav.vue"),
+    modal: () => import("@/components/global-modal/Modal.vue")
+  },
+  computed: {
+    modalIsActive() {
+      return this.$store.state.modal.modalIsActive;
+    }
   }
 };
 </script>

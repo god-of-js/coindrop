@@ -27,7 +27,9 @@
         <custom-button class="btn mr-2" @click="getReferralCode"
           >Copy referral code</custom-button
         >
-        <custom-button class="btn">Invite by email</custom-button>
+        <custom-button class="btn" @click="inviteByEmail"
+          >Invite by email</custom-button
+        >
       </div>
     </v-col>
   </v-row>
@@ -51,6 +53,13 @@ export default {
       copyText.select();
       copyText.setSelectionRange(0, 99999);
       document.execCommand("copy");
+    },
+    inviteByEmail() {
+      this.$store.commit("modal/setActiveModal", {
+        activeModal: "InviteByEmail",
+        modalIsActive: true,
+        commonData: {}
+      });
     }
   }
 };
