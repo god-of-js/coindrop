@@ -8,6 +8,11 @@ export default {
       path: "/",
       name: "index",
       component: () => import("@/views/dashboard/index.vue")
+    },
+    {
+      path: "/referrals",
+      name: "referrals",
+      component: () => import("@/views/dashboard/Referrals.vue")
     }
   ]
 };

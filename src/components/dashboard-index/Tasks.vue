@@ -1,13 +1,18 @@
 <template>
-  <div class="task-center">
+  <div class="task-center pb-3">
     <header class="d-flex align-center justify-space-between pa-3 pb-1 mb-1">
       <h4>Tasks</h4>
-      <v-icon class="icon" color="#212833">mdi-chevron-right</v-icon>
+      <router-link
+        >See all
+        <v-icon class="icon" color="#212833"
+          >mdi-chevron-right</v-icon
+        ></router-link
+      >
     </header>
     <ul class="tasks ma-0 pa-0">
-      <li v-for="(task, index) in 3" class="task mb-1" :key="index">
-        <p class="pa-4 ma-0">Upgrade account to stallion</p>
-        <div class="date">12/12/2021</div>
+      <li v-for="(task, index) in 3" class="task pa-4" :key="index">
+        <p class="ma-0">Upgrade account to stallion</p>
+        <div class="date pb-3">12/12/2021</div>
       </li>
     </ul>
   </div>
@@ -35,6 +40,8 @@ export default {};
     height: fit-content;
     .date {
       float: right;
+      font-size: 0.8em;
+      color: $text-grey;
     }
   }
 }
