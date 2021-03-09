@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     closeModal() {
-      this.$store.commit("modal/closeModal");
+      this.$store.commit("modal/setActiveModal", {});
     }
   }
 };
@@ -36,7 +36,6 @@ export default {
 @import "../../assets/styles/colors.scss";
 .modal-card {
   background: $primary-white;
-  width: 35%;
   border-radius: 5px;
 }
 button {

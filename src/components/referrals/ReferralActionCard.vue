@@ -16,7 +16,7 @@
       </div></v-col
     >
     <v-col sm="12" lg="4" class="pa-0" md="6">
-      <div class="d-flex align-center">
+      <div class="d-flex align-center justify-end">
         <input
           type="text"
           v-model="referralId"
@@ -39,29 +39,49 @@
 export default {
   data: () => {
     return {
-      referralId: "098756jbht"
+      referralId: "098756jbht",
     };
   },
   computed: {
     appName() {
       return this.$store.state.app.appName;
-    }
+    },
   },
   methods: {
     getReferralCode() {
       var copyText = document.getElementById("referralcode");
       copyText.select();
       copyText.setSelectionRange(0, 99999);
-      document.execCommand("copy");
+      this.copyToClipboard(copyText.value);
     },
     inviteByEmail() {
       this.$store.commit("modal/setActiveModal", {
         activeModal: "InviteByEmail",
         modalIsActive: true,
-        commonData: {}
+        commonData: {},
       });
-    }
-  }
+    },
+    copyToClipboard(text) {
+      if (
+        document.queryCommandSupported &&
+        document.queryCommandSupported("copy")
+      ) {
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in MS Edge.
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          return document.execCommand("copy"); // Security exception may be thrown by some browsers.
+        } catch (ex) {
+          console.warn("Copy to clipboard failed.", ex);
+          return false;
+        } finally {
+          document.body.removeChild(textarea);
+        }
+      }
+    },
+  },
 };
 </script>
 
@@ -92,7 +112,7 @@ export default {
     outline: none;
     border: 1px solid $border-color;
     box-sizing: border-box;
-    font-size: 1em;
+    font-size: 0.8em;
     ::placeholder {
       color: $border-color;
     }

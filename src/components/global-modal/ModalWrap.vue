@@ -1,41 +1,36 @@
 <template>
-  <div id="modal">
+  <v-dialog
+    id="modal"
+    v-model="dialog"
+    :fullscreen="fullscreen"
+    max-width="400"
+    overlay-color="rgba(55, 71, 79, 0.2)"
+    overlay-opacity=".82"
+    :retain-focus="false"
+    scrollable
+  >
     <slot />
-  </div>
+  </v-dialog>
 </template>
 
 <script>
 export default {
   name: "ModalWrap",
-  components: {}
+  computed: {
+    activeModal() {
+      return this.$store.state.modal.activeModal;
+    },
+    dialog: {
+      get() {
+        return !!this.activeModal;
+      },
+      set() {
+        this.$store.commit("modal/setActiveModal", {});
+      }
+    },
+    fullscreen() {
+      return this.$vuetify.breakpoint.width <= 768;
+    }
+  }
 };
 </script>
-
-<style lang="scss" scoped>
-#modal {
-  font-size: 16px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background: rgba(55, 71, 79, 0.2);
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  position: fixed;
-  z-index: 1300;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  will-change: opacity;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
-}
-</style>

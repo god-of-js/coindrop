@@ -1,6 +1,7 @@
 <template>
   <main class="pa-3">
     <referral-action-card />
+    <referrals />
   </main>
 </template>
 
@@ -8,7 +9,8 @@
 import ReferralActionCard from "../../components/referrals/ReferralActionCard.vue";
 export default {
   components: {
-    ReferralActionCard
+    ReferralActionCard,
+    Referrals: () => import("../../components/referrals/Referrals")
   }
 };
 </script>
