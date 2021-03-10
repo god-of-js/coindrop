@@ -1,8 +1,16 @@
 <template>
   <div class="portfolio">
     <div class="d-flex justify-end">
-      <custom-button class="deposit-button ma-2">Deposit</custom-button>
-      <custom-button class="withdraw-button ma-2">Withdraw</custom-button>
+      <router-link to="/payment/deposit">
+        <custom-button class="deposit-button ma-2"
+          >Deposit</custom-button
+        ></router-link
+      >
+      <router-link to="/payment/withdraw">
+        <custom-button class="withdraw-button ma-2"
+          >Withdraw</custom-button
+        ></router-link
+      >
     </div>
     <v-row>
       <v-col
@@ -28,27 +36,27 @@ export default {
       cardsData: [
         {
           name: "Balance",
-          value: 0
+          value: 0,
         },
         {
           name: "Amount Credited",
-          value: 0
+          value: 0,
         },
         {
           name: "Amount Withdrawn",
-          value: 0
+          value: 0,
         },
         {
           name: "Bonus Received",
-          value: 0
+          value: 0,
         },
         {
           name: "No of Referrals",
-          value: 0
-        }
-      ]
+          value: 0,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
