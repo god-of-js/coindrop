@@ -17,17 +17,26 @@ export default {
     {
       path: "/payment",
       name: "Payment",
-      component: () => import("@/views/dashboard/Payment.vue")
-    },
-    {
-      path: "/payment/deposit",
-      name: "Deposit",
-      component: () => import("@/views/dashboard/payment/Deposit.vue")
-    },
-    {
-      path: "/payment/withdraw",
-      name: "Withdraw",
-      component: () => import("@/views/dashboard/payment/Withdraw.vue")
+      component: () => import("@/views/dashboard/Payment.vue"),
+      redirect: "/payment/deposit",
+      children: [
+        {
+          path: "/payment/deposit",
+          name: "Deposit",
+          component: () => import("@/views/dashboard/payment/Deposit.vue"),
+          meta: {
+            parentRoute: "/payment"
+          }
+        },
+        {
+          path: "/payment/withdraw",
+          name: "Withdraw",
+          component: () => import("@/views/dashboard/payment/Withdraw.vue"),
+          meta: {
+            parentRoute: "/payment"
+          }
+        }
+      ]
     }
   ]
 };

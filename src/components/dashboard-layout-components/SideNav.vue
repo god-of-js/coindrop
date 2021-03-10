@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     checkActiveRoute(path) {
-      return path === this.$route.path;
+      return path === this.$route.path || path === this.$route.meta.parentRoute;
     }
   }
 };
