@@ -5,6 +5,7 @@
       :type="inputType"
       :placeholder="placeholder"
       v-model="value"
+      :required="requiredInput"
       @input="$emit('data', value)"
     />
   </div>
@@ -32,6 +33,10 @@ export default {
     inputType: {
       type: String,
       default: "text"
+    },
+    requiredInput: {
+      type: Boolean,
+      default: false
     }
   }
 };
@@ -51,7 +56,7 @@ input {
   outline: none;
   border: 1px solid $border-color;
   box-sizing: border-box;
-  font-size: 1em;
+  font-size: 0.8em;
   ::placeholder {
     color: $border-color;
   }

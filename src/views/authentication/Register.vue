@@ -4,10 +4,27 @@
       <h3 class="pa-1 ma-0">Create a free account</h3>
       <div class="mb-4 welcome-text">Welcome to {{ appName }}</div>
     </article>
-    <form action="">
-      <custom-input :label="'Email Address'" class="mt-2" />
-      <custom-input :label="'Password'" class="mt-2" />
-      <custom-input :label="'Referral Email(optional)'" class="mt-2" />
+    <form action="" @submit.prevent="register">
+      <custom-input
+        :label="'Email Address'"
+        :inputType="'email'"
+        class="mt-2"
+        @data="e => (data.email = e)"
+        :requiredInput="true"
+      />
+      <custom-input
+        :label="'Password'"
+        :inputType="'password'"
+        class="mt-2"
+        @data="e => (data.password = e)"
+        :requiredInput="true"
+      />
+      <custom-input
+        :label="'Referral Email(optional)'"
+        :inputType="'email'"
+        class="mt-2"
+        @data="e => (data.refEmail = e)"
+      />
       <custom-button class="mt-2">Create Account</custom-button>
       <p class="acknowledgement-text mt-2 text-left">
         By creating your account, you hereby admit that you have read
@@ -26,9 +43,24 @@
 
 <script>
 export default {
+  data: () => {
+    return {
+      data: {
+        email: null,
+        password: null,
+        refEmail: null
+      }
+    };
+  },
   computed: {
     appName() {
       return this.$store.state.app.appName;
+    }
+  },
+  methods: {
+    register() {
+      console.log(this.data);
+      this.$store.dispatch("auth/register", this.data);
     }
   }
 };

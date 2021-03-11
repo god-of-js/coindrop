@@ -25,6 +25,7 @@ export default {
   background-color: $secondary-background;
   min-height: 100vh;
   height: 100%;
+  overflow: hidden;
   &__card-container {
     display: flex;
     align-items: center;
@@ -34,7 +35,7 @@ export default {
   }
   &__card {
     background: $primary-white;
-    width: 27%;
+    width: 30%;
     padding: 20px;
     @include box-shadow();
   }

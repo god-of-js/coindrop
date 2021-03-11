@@ -1,5 +1,6 @@
 export default {
   state: {
-    appName: "Crypto"
+    appName: "Crypto",
+    apiUrl: "http://localhost:4000"
   }
 };

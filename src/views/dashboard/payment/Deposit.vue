@@ -17,15 +17,15 @@ export default {
       routeArr: [
         {
           name: "Crypto",
-          url: "/payment/deposit/crypto",
-        },
-      ],
+          url: "/payment/deposit/crypto"
+        }
+      ]
     };
   },
   components: {
     ButtonNavigators,
-    CryptoSelector,
-  },
+    CryptoSelector
+  }
 };
 </script>
 

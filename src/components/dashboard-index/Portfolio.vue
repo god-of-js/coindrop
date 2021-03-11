@@ -3,7 +3,7 @@
     <div class="d-flex justify-end">
       <router-link to="/payment/deposit">
         <custom-button class="deposit-button ma-2"
-          >Deposit</custom-button
+          >Increase Hash Rate</custom-button
         ></router-link
       >
       <router-link to="/payment/withdraw">
@@ -36,27 +36,27 @@ export default {
       cardsData: [
         {
           name: "Balance",
-          value: 0,
+          value: 0
         },
         {
           name: "Amount Credited",
-          value: 0,
+          value: 0
         },
         {
           name: "Amount Withdrawn",
-          value: 0,
+          value: 0
         },
         {
           name: "Bonus Received",
-          value: 0,
+          value: 0
         },
         {
           name: "No of Referrals",
-          value: 0,
-        },
-      ],
+          value: 0
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 

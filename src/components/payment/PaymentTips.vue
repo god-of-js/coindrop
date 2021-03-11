@@ -1,17 +1,12 @@
 <template>
-    <div class="payment-tips">
-
-    </div>
+  <div class="payment-tips"></div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {};
 </script>
 
 <style lang="scss" scoped>
 .payment-tips {
-    
 }
 </style>

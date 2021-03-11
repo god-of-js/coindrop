@@ -14,8 +14,8 @@
 export default {
   data: () => ({
     items: ["Bitcoin", "Eth"],
-    coin: "",
-  }),
+    coin: ""
+  })
 };
 </script>
 
