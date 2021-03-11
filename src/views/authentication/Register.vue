@@ -1,6 +1,6 @@
 <template>
   <main>
-    <article>
+    <article class="text-center">
       <h3 class="pa-1 ma-0">Create a free account</h3>
       <div class="mb-4 welcome-text">Welcome to {{ appName }}</div>
     </article>
@@ -57,9 +57,11 @@ export default {
       return this.$store.state.app.appName;
     }
   },
+  mounted() {
+    console.log(this);
+  },
   methods: {
     register() {
-      console.log(this.data);
       this.$store.dispatch("auth/register", this.data);
     }
   }

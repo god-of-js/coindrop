@@ -1,14 +1,26 @@
 <template>
   <main>
-    <article>
+    <article class="text-center">
       <h3 class="pa-1 ma-0">Log In</h3>
       <div class="mb-4 welcome-text">
         Login to gain access to your {{ appName }} dashboard
       </div>
     </article>
-    <form action="">
-      <custom-input :label="'Email Address'" class="mt-2" />
-      <custom-input :label="'Password'" class="mt-2" />
+    <form action="" @submit.prevent="login">
+      <custom-input
+        :label="'Email Address'"
+        :inputType="'email'"
+        class="mt-2"
+        @data="e => (data.email = e)"
+        :requiredInput="true"
+      />
+      <custom-input
+        :label="'Password'"
+        :inputType="'password'"
+        class="mt-2"
+        @data="e => (data.password = e)"
+        :requiredInput="true"
+      />
       <custom-button class="mt-2">Log In</custom-button>
     </form>
     <div class="mt-4 login-text">
@@ -27,9 +39,22 @@
 
 <script>
 export default {
+  data: () => {
+    return {
+      data: {
+        email: null,
+        password: null
+      }
+    };
+  },
   computed: {
     appName() {
       return this.$store.state.app.appName;
+    }
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("auth/login", this.data);
     }
   }
 };

@@ -73,19 +73,15 @@ export default {
         textarea.select();
         try {
           document.execCommand("copy");
-          let config = {
-            position: "topCenter"
-          };
-          this.$toast.success(
-            "Referral code copied successfully",
-            "Success",
-            config
-          );
+          this.$notification.success({
+            message: "Error",
+            description: "Referral code copied successfully"
+          });
         } catch (ex) {
-          let error = {
-            position: "topRight"
-          };
-          this.$toast.error("An error occured. copy manually", "Error", error);
+          this.$notification.success({
+            message: "Error",
+            description: "An error occured. copy manually."
+          });
           console.warn("Copy to clipboard failed.", ex);
           return false;
         } finally {

@@ -2,7 +2,7 @@
   <div class="task-center pb-3">
     <header class="d-flex align-center justify-space-between pa-3 pb-1 mb-1">
       <h4>Tasks</h4>
-      <router-link
+      <router-link to="/tasks"
         >See all
         <v-icon class="icon" color="#212833"
           >mdi-chevron-right</v-icon

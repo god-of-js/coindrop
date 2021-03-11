@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import app from "./modules/application";
 import modal from "./modules/modal";
 import auth from "./modules/auth";
+import user from "./modules/user";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -12,6 +13,7 @@ export default new Vuex.Store({
   modules: {
     app,
     modal,
-    auth
+    auth,
+    user
   }
 });
