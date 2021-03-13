@@ -25,7 +25,7 @@
           id="copy-item"
         />
         <custom-button class="btn mr-2" @click="getReferralCode"
-          >Copy referral code</custom-button
+          >Copy referral email</custom-button
         >
         <custom-button class="btn" @click="inviteByEmail"
           >Invite by email</custom-button

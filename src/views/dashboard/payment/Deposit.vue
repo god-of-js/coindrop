@@ -1,13 +1,13 @@
 <template>
   <div class="deposit pa-5">
     <button-navigators :routeArr="routeArr"></button-navigators>
-    <v-row>
-      <v-col sm="12" lg="5" md="6">
+    <v-row class="d-flex justify-space-between">
+      <v-col sm="12" lg="5" md="5">
         <v-col lg="10"> <crypto-selector /></v-col>
         <deposit-tips />
       </v-col>
-      <v-col sm="12" lg="5" md="6">
-        <coin-payment />
+      <v-col sm="12" lg="6" md="6">
+        <coin-payment :componentId="componentId"/>
       </v-col>
     </v-row>
   </div>
@@ -26,7 +26,8 @@ export default {
           name: "Crypto",
           url: "/payment/deposit/crypto"
         }
-      ]
+      ],
+      componentId: ""
     };
   },
   components: {
@@ -34,6 +35,9 @@ export default {
     CryptoSelector,
     DepositTips,
     CoinPayment
+  },
+  mounted() {
+    this.componentId = this.$route.params.crypto;
   }
 };
 </script>

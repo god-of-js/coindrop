@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio">
     <div class="d-flex justify-end">
-      <router-link to="/payment/deposit">
+      <router-link to="/payment/plans">
         <custom-button class="deposit-button ma-2"
           >Increase Hash Rate</custom-button
         ></router-link

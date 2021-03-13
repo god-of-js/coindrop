@@ -37,7 +37,7 @@ export default {
   methods: {
     upgrade() {
       if (this.$store.state.user.user)
-        this.$router.push(`/payment/upgrade/${this.plan.type}`);
+        this.$router.push(`/payment/upgrade/${this.plan.type}/BTC`);
       else this.$router.push(`/payment/upgrade/${this.plan.nextRoute}`);
     }
   }

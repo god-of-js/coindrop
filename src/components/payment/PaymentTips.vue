@@ -18,7 +18,7 @@ export default {};
 <style lang="scss" scoped>
 @import "../../assets/styles/colors.scss";
 .payment-tips {
-  background: $border-color;
+  background: $secondary-background;
   border-radius: 7px;
 }
 </style>

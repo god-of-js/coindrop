@@ -29,7 +29,7 @@ export default {
       redirect: "/payment/plans",
       children: [
         {
-          path: "/payment/upgrade/:type",
+          path: "/payment/upgrade/:type/:crypto",
           name: "Deposit",
           component: () => import("@/views/dashboard/payment/Deposit.vue"),
           meta: {
