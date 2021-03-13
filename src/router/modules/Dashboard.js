@@ -10,6 +10,14 @@ export default {
       component: () => import("@/views/dashboard/index.vue")
     },
     {
+      path: "/payment/plans",
+      name: "plans",
+      component: () => import("@/views/dashboard/Plans.vue"),
+      meta: {
+        parentRoute: "/payment"
+      }
+    },
+    {
       path: "/referrals",
       name: "referrals",
       component: () => import("@/views/dashboard/Referrals.vue")
@@ -18,10 +26,10 @@ export default {
       path: "/payment",
       name: "Payment",
       component: () => import("@/views/dashboard/Payment.vue"),
-      redirect: "/payment/deposit",
+      redirect: "/payment/plans",
       children: [
         {
-          path: "/payment/deposit",
+          path: "/payment/upgrade/:type",
           name: "Deposit",
           component: () => import("@/views/dashboard/payment/Deposit.vue"),
           meta: {

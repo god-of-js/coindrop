@@ -1,4 +1,5 @@
 import Cookies from "js-cookie";
+// ["User", JWT]
 const set = (name, value) => {
   console.log(name, value);
   Cookies.set(name, value);

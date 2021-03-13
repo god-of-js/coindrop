@@ -5,7 +5,7 @@
     </v-avatar>
     <div class="welcome-text">
       <p>
-        <b>Hey {{ user.name }}</b
+        <b>Hey {{ userName }}</b
         >, Welcome to your {{ appName }} dashboard.
       </p>
       <p>What would you be doing today?</p>
@@ -16,11 +16,8 @@
 <script>
 export default {
   computed: {
-    user() {
-      return {
-        name: "Henry Eze",
-        email: "henryeze019@gmail.com"
-      };
+    userName() {
+      return this.$store.state.user.user.email.split("@")[0];
     },
     appName() {
       return this.$store.state.app.appName;

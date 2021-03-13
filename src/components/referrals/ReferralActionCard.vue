@@ -22,7 +22,7 @@
           v-model="referralId"
           disabled
           class="mr-2"
-          id="referralcode"
+          id="copy-item"
         />
         <custom-button class="btn mr-2" @click="getReferralCode"
           >Copy referral code</custom-button
@@ -36,58 +36,26 @@
 </template>
 
 <script>
+import copyToClipboard from "@/mixins/copyToClipboard.js";
 export default {
   data: () => {
     return {
       referralId: "098756jbht"
     };
   },
+  mixins: [copyToClipboard],
   computed: {
     appName() {
       return this.$store.state.app.appName;
     }
   },
   methods: {
-    getReferralCode() {
-      var copyText = document.getElementById("referralcode");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      this.copyToClipboard(copyText.value);
-    },
     inviteByEmail() {
       this.$store.commit("modal/setActiveModal", {
         activeModal: "InviteByEmail",
         modalIsActive: true,
         commonData: {}
       });
-    },
-    copyToClipboard(text) {
-      if (
-        document.queryCommandSupported &&
-        document.queryCommandSupported("copy")
-      ) {
-        var textarea = document.createElement("textarea");
-        textarea.textContent = text;
-        textarea.style.position = "fixed";
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand("copy");
-          this.$notification.success({
-            message: "Error",
-            description: "Referral code copied successfully"
-          });
-        } catch (ex) {
-          this.$notification.success({
-            message: "Error",
-            description: "An error occured. copy manually."
-          });
-          console.warn("Copy to clipboard failed.", ex);
-          return false;
-        } finally {
-          document.body.removeChild(textarea);
-        }
-      }
     }
   }
 };
