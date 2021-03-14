@@ -4,6 +4,7 @@ import axios from "axios";
 import get from "lodash/get";
 import { BASE_URL } from "../config/config";
 import Cookies from "./cookies";
+import store from "@/store";
 const instance = new Vue();
 const token = Cookies.getToken();
 const config = {
@@ -35,6 +36,7 @@ service.interceptors.response.use(
         description
       });
     } else if (err.response.data.extraData.login) {
+      store.dispatch("user/logout");
       router.push("/login");
     }
     return Promise.reject(err.response);

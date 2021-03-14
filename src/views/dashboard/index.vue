@@ -17,8 +17,11 @@ export default {
     WelcomeCard: () => import("@/components/dashboard-index/WelcomeCard.vue"),
     Portfolio: () => import("@/components/dashboard-index/Portfolio.vue"),
     Tasks: () => import("@/components/dashboard-index/Tasks.vue"),
-    ReferCard: () => import("@/components/dashboard-index/ReferCard.vue")
-  }
+    ReferCard: () => import("@/components/dashboard-index/ReferCard.vue"),
+  },
+  mounted() {
+    this.$store.dispatch("admin/getUserPayments");
+  },
 };
 </script>
 

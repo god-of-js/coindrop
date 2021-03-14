@@ -5,6 +5,7 @@ import modal from "./modules/modal";
 import auth from "./modules/auth";
 import user from "./modules/user";
 import payment from "./modules/payment";
+import admin from "./modules/admin";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     modal,
     auth,
     user,
-    payment
+    payment,
+    admin
   }
 });
