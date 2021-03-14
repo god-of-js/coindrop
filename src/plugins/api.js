@@ -1,6 +1,7 @@
+import Vue from "vue";
+import router from "@/router";
 import axios from "axios";
 import get from "lodash/get";
-import Vue from "vue";
 import { BASE_URL } from "../config/config";
 import Cookies from "./cookies";
 const instance = new Vue();
@@ -33,6 +34,8 @@ service.interceptors.response.use(
         message: "Error",
         description
       });
+    } else if (err.response.data.extraData.login) {
+      router.push("/login");
     }
     return Promise.reject(err.response);
   }

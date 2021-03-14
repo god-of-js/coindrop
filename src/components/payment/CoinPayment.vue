@@ -10,12 +10,12 @@ export default {
   props: {
     componentId: {
       type: String,
-      default: "BTC",
-    },
+      default: "BTC"
+    }
   },
   components: {
-    BTC,
-  },
+    BTC
+  }
 };
 </script>
 

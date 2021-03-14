@@ -1,21 +1,26 @@
 <template>
   <v-select
     :items="items"
-    label="Select Coin"
+    label="Select Coin to pay with"
     class="mt-4"
     dense
     outlined
     v-model="coin"
-    @change="$emit('selectedCoin', coin)"
+    @any="$emit('selectedcoin', coin)"
   ></v-select>
 </template>
 
 <script>
 export default {
   data: () => ({
-    items: ["Bitcoin", "Eth"],
+    items: ["BTC", "ETH"],
     coin: "BTC"
-  })
+  }),
+  watch: {
+    coin() {
+      this.$emit("selectedcoin", this.coin);
+    }
+  }
 };
 </script>
 

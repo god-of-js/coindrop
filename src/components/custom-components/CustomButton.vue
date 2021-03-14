@@ -1,11 +1,23 @@
 <template>
   <button
     id="btn"
-    :class="[inactive ? 'btn-disabled ' : '', setClass]"
-    :disabled="inactive"
+    :class="[
+      inactive || loading ? 'btn-disabled ' : '',
+      setClass,
+      'd-flex align-center justify-center'
+    ]"
+    :disabled="inactive || loading"
     v-on="$listeners"
   >
-    <slot />
+    <div v-if="!loading">
+      <slot />
+    </div>
+
+    <v-progress-circular
+      indeterminate
+      color="primary"
+      v-else
+    ></v-progress-circular>
   </button>
 </template>
 

@@ -8,7 +8,7 @@ const remove = name => {
   Cookies.remove(name);
 };
 const getToken = () => {
-  return Cookies.get("JWT");
+  return Cookies.get("JWT") ?? "";
 };
 const get = name => {
   let gottenCookie = JSON.parse(Cookies.get(name)) ?? null;
