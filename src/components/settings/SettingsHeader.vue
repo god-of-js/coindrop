@@ -14,12 +14,12 @@ export default {
     return {
       routeArr: [
         {
-          url: "/payment/deposits",
-          name: "Deposit"
+          url: "/settings/payment-details",
+          name: "Change Payment Details"
         },
         {
           url: "/payment/withdraw",
-          name: "Withdrawal"
+          name: "Profile"
         },
         {
           url: "/payment/plans",

@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     checkRoute(url) {
-      return this.$route.path === url;
+      return this.$route.path === url || this.$route.meta.parent === url;
     }
   }
 };

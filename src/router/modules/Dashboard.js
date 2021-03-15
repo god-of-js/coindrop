@@ -26,20 +26,29 @@ export default {
       path: "/payment",
       name: "Payment",
       component: () => import("@/views/dashboard/Payment.vue"),
-      redirect: "/payment/plans",
+      redirect: "/payment/deposits",
       children: [
         {
           path: "/payment/upgrade/:type/:crypto",
-          name: "Deposit",
-          component: () => import("@/views/dashboard/payment/Deposit.vue"),
+          name: "Upgrade",
+          component: () => import("@/views/dashboard/payment/Upgrade.vue"),
           meta: {
-            parentRoute: "/payment"
+            parentRoute: "/payment",
+            parent: "/payment/plans"
           }
         },
         {
           path: "/payment/withdraw",
           name: "Withdraw",
           component: () => import("@/views/dashboard/payment/Withdraw.vue"),
+          meta: {
+            parentRoute: "/payment"
+          }
+        },
+        {
+          path: "/payment/deposits",
+          name: "Deposits",
+          component: () => import("@/views/dashboard/payment/Deposits.vue"),
           meta: {
             parentRoute: "/payment"
           }
