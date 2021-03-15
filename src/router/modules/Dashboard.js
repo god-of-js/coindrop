@@ -29,7 +29,7 @@ export default {
       redirect: "/payment/deposits",
       children: [
         {
-          path: "/payment/upgrade/:type/:crypto",
+          path: "/payment/upgrade/:type/:coin",
           name: "Upgrade",
           component: () => import("@/views/dashboard/payment/Upgrade.vue"),
           meta: {

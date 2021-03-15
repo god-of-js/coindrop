@@ -20,7 +20,6 @@ export default {
     ReferCard: () => import("@/components/dashboard-index/ReferCard.vue")
   },
   mounted() {
-    this.$store.dispatch("admin/getUserPayments");
   }
 };
 </script>

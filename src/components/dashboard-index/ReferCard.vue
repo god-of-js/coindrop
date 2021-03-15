@@ -4,7 +4,7 @@
     class="pa-3 refer-card d-flex align-center justify-space-between"
   >
     <p>
-      <b>Refer your friends and get over 50% of your refferal's deposits.</b>
+      <b>Refer your friends and get over 10% of your refferal's deposits.</b>
     </p>
     <v-icon class="icon" color="#212833">mdi-chevron-right</v-icon>
   </router-link>

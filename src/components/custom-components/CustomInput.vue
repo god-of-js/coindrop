@@ -51,6 +51,7 @@ input {
   height: 36px;
   width: 100%;
   padding-left: 6px;
+  padding-right: 6px;
   background: $primary-white;
   border-radius: 5px;
   outline: none;

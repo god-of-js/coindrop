@@ -19,7 +19,7 @@ export default {
         },
         {
           url: "/payment/withdraw",
-          name: "Withdrawal"
+          name: "Withdrawals"
         },
         {
           url: "/payment/plans",

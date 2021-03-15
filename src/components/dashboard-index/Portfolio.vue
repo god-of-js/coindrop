@@ -20,43 +20,44 @@
         v-for="(card, index) in cardsData"
         :key="index"
       >
-        <div class="portfolio-card pa-3 text-center">
-          <div v-text="card.value" />
-          <p v-text="card.name" />
-        </div>
+        <portfolio-card :value="card.value" :name="card.name" />
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
+import PortfolioCard from "./PortfolioCard";
 export default {
   data: () => {
     return {
       cardsData: [
         {
           name: "Balance",
-          value: 0
+          value: 0,
         },
         {
           name: "Amount Credited",
-          value: 0
+          value: 0,
         },
         {
           name: "Amount Withdrawn",
-          value: 0
+          value: 0,
         },
         {
-          name: "Bonus Received",
-          value: 0
+          name: "Hash Rate",
+          value: 0,
         },
         {
           name: "No of Referrals",
-          value: 0
-        }
-      ]
+          value: 0,
+        },
+      ],
     };
-  }
+  },
+  components: {
+    PortfolioCard,
+  },
 };
 </script>
 
@@ -67,17 +68,6 @@ export default {
   min-height: 40vh;
   h3 {
     font-size: 1em;
-  }
-  &-card {
-    background: $primary-white;
-    font-size: 0.9em;
-    @include box-shadow();
-    div {
-      height: 40px;
-      font-size: 1.4em;
-      font-weight: bold;
-      color: $text-grey;
-    }
   }
   .deposit-button {
     ::v-deep {

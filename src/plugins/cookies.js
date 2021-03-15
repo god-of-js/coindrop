@@ -11,7 +11,8 @@ const getToken = () => {
   return Cookies.get("JWT") ?? "";
 };
 const get = name => {
-  let gottenCookie = JSON.parse(Cookies.get(name)) ?? null;
+  const cookie = Cookies.get(name);
+  let gottenCookie = cookie ? JSON.parse(cookie) : null;
   return gottenCookie;
 };
 export default {

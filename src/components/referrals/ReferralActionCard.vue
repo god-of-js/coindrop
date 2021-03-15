@@ -10,7 +10,7 @@
           >.
         </p>
         <p>
-          Earn over 50% commision everytime your friends make a transaction on
+          Earn over 10% commision everytime your friends make a transaction on
           {{ appName }}
         </p>
       </div></v-col

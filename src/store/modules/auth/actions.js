@@ -16,6 +16,7 @@ export default {
       cookies.set("User", result.data.data);
       cookies.set("JWT", result.data.data.JWT);
       commit("user/saveUser", result.data.data, { root: true });
+    }).then(() => {
       router.push("/dashboard");
     });
   }
