@@ -26,7 +26,7 @@ export default {
       path: "/payment",
       name: "Payment",
       component: () => import("@/views/dashboard/Payment.vue"),
-      redirect: "/payment/deposits",
+      redirect: "/payment/withdraw",
       children: [
         {
           path: "/payment/upgrade/:type/:coin",

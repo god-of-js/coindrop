@@ -7,29 +7,29 @@
 
 <script>
 export default {
-    props: {
-        value: {
-            type: Number
-        },
-        name: {
-            type: String
-        }
+  props: {
+    value: {
+      type: Number
+    },
+    name: {
+      type: String
     }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/styles/colors.scss";
 @import "../../assets/styles/mixins.scss";
-.portfolio-card  {
-    background: $primary-white;
-    font-size: 0.9em;
-    @include box-shadow();
-    div {
-      height: 40px;
-      font-size: 1.4em;
-      font-weight: bold;
-      color: $text-grey;
-    }
+.portfolio-card {
+  background: $primary-white;
+  font-size: 0.9em;
+  @include box-shadow();
+  div {
+    height: 40px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: $text-grey;
   }
+}
 </style>

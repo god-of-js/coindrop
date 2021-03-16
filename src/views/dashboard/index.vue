@@ -18,8 +18,6 @@ export default {
     Portfolio: () => import("@/components/dashboard-index/Portfolio.vue"),
     Tasks: () => import("@/components/dashboard-index/Tasks.vue"),
     ReferCard: () => import("@/components/dashboard-index/ReferCard.vue")
-  },
-  mounted() {
   }
 };
 </script>

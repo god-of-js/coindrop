@@ -14,16 +14,12 @@ export default {
     return {
       routeArr: [
         {
-          url: "/payment/deposits",
-          name: "Deposit"
-        },
-        {
           url: "/payment/withdraw",
           name: "Withdrawals"
         },
         {
           url: "/payment/plans",
-          name: "Upgrade"
+          name: "Upgrade to increase Hash Rate"
         }
       ]
     };

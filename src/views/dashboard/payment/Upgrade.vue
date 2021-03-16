@@ -2,7 +2,7 @@
   <div class="deposit pa-5">
     <v-row class="d-flex justify-space-between">
       <v-col sm="12" lg="5" md="5">
-        <v-col lg="10"> <crypto-selector @selectedcoin="changeCoin" /></v-col>
+        <v-col lg="10"> <crypto-selector @selectedcoin="changeCoin"/></v-col>
         <deposit-tips />
       </v-col>
       <v-col sm="12" lg="6" md="6">
@@ -26,13 +26,13 @@ export default {
   data: () => {
     return {
       componentId: "",
-      loading: false,
+      loading: false
     };
   },
   components: {
     CryptoSelector,
     DepositTips,
-    CoinPayment,
+    CoinPayment
   },
   mounted() {
     this.componentId = this.$route.params.crypto;
@@ -46,12 +46,12 @@ export default {
       this.loading = true;
       const data = {
         upgradeType: this.$route.params.type,
-        coin: this.$route.params.coin,
+        coin: this.$route.params.coin
       };
       await this.$store.dispatch("payment/claimPayment", data);
       this.loading = false;
-    },
-  },
+    }
+  }
 };
 </script>
 

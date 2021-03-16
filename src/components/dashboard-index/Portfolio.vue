@@ -1,6 +1,6 @@
 <template>
   <div class="portfolio">
-    <div class="d-flex justify-end">
+    <div class="d-flex justify-end" v-if="showActions">
       <router-link to="/payment/plans">
         <custom-button class="deposit-button ma-2"
           >Increase Hash Rate</custom-button
@@ -29,35 +29,33 @@
 <script>
 import PortfolioCard from "./PortfolioCard";
 export default {
+  props: {
+    showActions: {
+      type: Boolean,
+      default: true
+    }
+  },
   data: () => {
     return {
       cardsData: [
         {
           name: "Balance",
-          value: 0,
-        },
-        {
-          name: "Amount Credited",
-          value: 0,
-        },
-        {
-          name: "Amount Withdrawn",
-          value: 0,
+          value: 0
         },
         {
           name: "Hash Rate",
-          value: 0,
+          value: 0
         },
         {
           name: "No of Referrals",
-          value: 0,
-        },
-      ],
+          value: 0
+        }
+      ]
     };
   },
   components: {
-    PortfolioCard,
-  },
+    PortfolioCard
+  }
 };
 </script>
 
@@ -65,7 +63,7 @@ export default {
 @import "../../assets/styles/colors.scss";
 @import "../../assets/styles/mixins.scss";
 .portfolio {
-  min-height: 40vh;
+  // min-height: 40vh;
   h3 {
     font-size: 1em;
   }

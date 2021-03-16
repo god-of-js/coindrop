@@ -11,16 +11,16 @@
         :label="'Amount to withdraw'"
         :inputType="'number'"
         :requiredInput="true"
-        @data="(e) => (data.amount = e)"
+        @data="e => (data.amount = e)"
       />
       <custom-input
         class="mt-2"
         :label="'Crypto Address'"
         :inputType="'text'"
         :requiredInput="true"
-        @data="(e) => (data.cryptoAddress = e)"
+        @data="e => (data.cryptoAddress = e)"
       />
-      <crypto-selector @selectedcoin="(e) => (data.coin = e)" />
+      <crypto-selector @selectedcoin="e => (data.coin = e)" />
       <custom-button class="mt-4" :inactive="checkValues"
         >Withdraw Funds
       </custom-button>
@@ -35,27 +35,28 @@ export default {
       data: {
         coin: "BTC",
         cryptoAddress: null,
-        amount: null,
-      },
+        amount: null
+      }
     };
   },
   components: {
-    cryptoSelector: () => import("@/components/payment/CryptoSelector.vue"),
+    cryptoSelector: () => import("@/components/payment/CryptoSelector.vue")
   },
   computed: {
     checkValues() {
       return !this.data.amount || !this.data.cryptoAddress;
-    },
+    }
   },
   methods: {
     makeRequest() {
       this.data.amount = Number(this.data.amount);
+      console.log(typeof this.data.amount);
       this.$store.dispatch("payment/requestWithdrawal", this.data);
     },
     selectCoin(e) {
       this.data.coin = e;
-    },
-  },
+    }
+  }
 };
 </script>
 

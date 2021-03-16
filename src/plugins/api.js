@@ -28,7 +28,11 @@ service.interceptors.response.use(
     return Promise.resolve(response);
   },
   err => {
-    const description = get(err.response, "data.message", "Success");
+    const description = get(
+      err.response,
+      "data.message",
+      "Something went wrong"
+    );
     console.log(err.response, "response");
     if (!err.response.data.customHandle) {
       instance.$notification.error({
