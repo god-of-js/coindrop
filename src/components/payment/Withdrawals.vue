@@ -31,48 +31,6 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      referrals: [
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        }
-      ]
-    };
-  },
   computed: {
     withdrawalRequests() {
       return this.$store.state.payment.withdrawalRequests;

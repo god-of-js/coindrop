@@ -13,7 +13,7 @@ export default {
         });
     });
   },
-  requestWithdrawal({ rootState }, data) {
+  requestWithdrawal({ rootState, dispatch, commit }, data) {
     return new Promise((resolve, reject) => {
       instance.$api
         .post("/payment/make-withdrawal-request", {
@@ -21,6 +21,8 @@ export default {
           ...data
         })
         .then(() => {
+          dispatch("getWithdrawalRequests");
+          commit('modal/setActiveModal', null, { root: true })
           resolve();
         })
         .catch(() => {
@@ -29,7 +31,6 @@ export default {
     });
   },
   getWithdrawalRequests({ commit, rootState }) {
-    console.log(rootState.user.user._id);
     instance.$api
       .get(`/payment/get-withdrawal-requests/${rootState.user.user._id}`)
       .then(result => {
