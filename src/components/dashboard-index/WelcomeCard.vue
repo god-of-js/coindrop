@@ -37,7 +37,6 @@ export default {
 @import "../../assets/styles/mixins.scss";
 .welcome-card {
   background: $primary-white;
-  // width: 97%;
   margin: auto;
   @include box-shadow();
   .avatar {
