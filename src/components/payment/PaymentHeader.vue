@@ -14,6 +14,10 @@ export default {
     return {
       routeArr: [
         {
+          url: "/payment/deposits",
+          name: "Deposits"
+        },
+        {
           url: "/payment/withdraw",
           name: "Withdrawals"
         },

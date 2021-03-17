@@ -38,11 +38,29 @@ export default {
           }
         },
         {
+          path: "/payment/deposits/:id",
+          name: "Withdrawal",
+          component: () => import("@/views/dashboard/payment/Deposit.vue"),
+          meta: {
+            parentRoute: "/payment",
+            parent: "/payment/deposits"
+          }
+        },
+        {
           path: "/payment/withdraw",
-          name: "Withdraw",
-          component: () => import("@/views/dashboard/payment/Withdraw.vue"),
+          name: "Withdrawals",
+          component: () => import("@/views/dashboard/payment/Withdrawals.vue"),
           meta: {
             parentRoute: "/payment"
+          }
+        },
+        {
+          path: "/payment/withdraw/:id",
+          name: "Withdrawal",
+          component: () => import("@/views/dashboard/payment/Withdrawal.vue"),
+          meta: {
+            parentRoute: "/payment",
+            parent: "/payment/withdraw"
           }
         },
         {

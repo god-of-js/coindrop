@@ -22,7 +22,7 @@ export default {
         })
         .then(() => {
           dispatch("getWithdrawalRequests");
-          commit('modal/setActiveModal', null, { root: true })
+          commit("modal/setActiveModal", null, { root: true });
           resolve();
         })
         .catch(() => {
@@ -37,5 +37,19 @@ export default {
         console.log(result.data.data);
         commit("setWithdrawalRequests", result.data.data);
       });
+  },
+  getClaimedPayments({ commit, rootState }) {
+    instance.$api
+      .get(`/payment/claimed-payments/${rootState.user.user._id}`)
+      .then(result => {
+        console.log(result.data.data);
+        commit("setClaimedPayments", result.data.data);
+      });
+  },
+  getClaimedPayment({ commit }, { id }) {
+    instance.$api.get(`/payment/claimed-payment/${id}`).then(result => {
+      console.log(result.data.data);
+      commit("setClaimedPayment", result.data.data);
+    });
   }
 };

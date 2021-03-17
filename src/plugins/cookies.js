@@ -12,7 +12,7 @@ const getToken = () => {
 };
 const get = name => {
   const cookie = Cookies.get(name);
-  let gottenCookie = cookie ? JSON.parse(cookie) : null;
+  let gottenCookie = cookie ? JSON.parse(cookie) : {};
   return gottenCookie;
 };
 export default {

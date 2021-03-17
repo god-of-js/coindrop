@@ -40,8 +40,8 @@ service.interceptors.response.use(
         description
       });
     } else if (err.response.data.extraData.login) {
-      store.dispatch("user/logout");
       router.push("/login");
+      store.dispatch("user/logout");
     }
     return Promise.reject(err.response);
   }
