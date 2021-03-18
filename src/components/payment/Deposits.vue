@@ -6,6 +6,7 @@
         <thead>
           <tr>
             <th class="text-left">Upgrade type</th>
+            <th class="text-left">Amount</th>
             <th class="text-left">Platform</th>
             <th class="text-left">Date of request</th>
             <th class="text-left">Status</th>
@@ -15,6 +16,7 @@
         <tbody>
           <tr v-for="(payment, index) in claimedPayments" :key="index">
             <td>{{ payment.upgradeType }}</td>
+            <td>{{ payment.amount }}</td>
             <td>{{ payment.coin }}</td>
             <td>{{ returnDate(payment.createdAt) }}</td>
             <td>{{ payment.status }}</td>
