@@ -13,6 +13,7 @@
           Earn over 10% commision everytime your friends make a transaction on
           {{ appName }}
         </p>
+        <p>Send your email to your referral to be used on Registration</p>
       </div></v-col
     >
     <v-col sm="12" lg="4" class="pa-0" md="6">
@@ -27,9 +28,9 @@
         <custom-button class="btn mr-2" @click="getReferralCode"
           >Copy referral email</custom-button
         >
-        <custom-button class="btn" @click="inviteByEmail"
+        <!-- <custom-button class="btn" @click="inviteByEmail"
           >Invite by email</custom-button
-        >
+        > -->
       </div>
     </v-col>
   </v-row>
@@ -39,8 +40,7 @@
 import copyToClipboard from "@/mixins/copyToClipboard.js";
 export default {
   data: () => {
-    return {
-    };
+    return {};
   },
   mixins: [copyToClipboard],
   computed: {
@@ -48,7 +48,7 @@ export default {
       return this.$store.state.app.appName;
     },
     referralId() {
-      return this.$store.state.user.user.email
+      return this.$store.state.user.user.email;
     }
   },
   methods: {

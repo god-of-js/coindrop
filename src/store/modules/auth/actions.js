@@ -19,6 +19,7 @@ export default {
     instance.$api
       .post("/authentication/login", data)
       .then(async result => {
+        console.log(result.data.data.JWT);
         cookies.set("User", result.data.data);
         cookies.set("JWT", result.data.data.JWT);
         commit("user/saveUser", result.data.data, { root: true });

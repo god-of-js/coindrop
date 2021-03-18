@@ -4,14 +4,17 @@ import cookies from "@/plugins/cookies.js";
 import router from "@/router";
 export default {
   logout({ commit }) {
-    commit("saveUser", null);
+    router.push("/login");
     cookies.remove("JWT");
     cookies.remove("User");
-    router.push("/login");
+    commit("saveUser", {});
   },
   getUserProfile({ state, commit }) {
-    instance.$api.get(`/user/user-profile/${state.user._id}`).then(response => {
-      commit("saveUser", response.data.data);
-    });
+    setTimeout(function () {
+      instance.$api.get(`/user/user-profile/${state.user._id}`).then(response => {
+        commit("saveUser", response.data.data);
+      });
+    }, 10000);
+
   }
 };
