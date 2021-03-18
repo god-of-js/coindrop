@@ -1,5 +1,6 @@
 export default {
   withdrawalRequests: [],
   claimedPayments: [],
-  claimedPayment: {}
+  claimedPayment: {},
+  withdrawalRequest: {}
 };

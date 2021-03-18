@@ -1,8 +1,7 @@
 export default {
   setActiveModal(state, params) {
-    console.log(params);
-    state.activeModal = params.activeModal || "";
-    state.modalIsActive = params.modalIsActive || false;
-    state.commonData = params.commonData || {};
+    state.activeModal = params ? params.activeModal : "";
+    state.modalIsActive = params ? params.modalIsActive : false;
+    state.commonData = params ? params.commonData : {};
   }
 };

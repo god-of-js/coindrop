@@ -1,27 +1,33 @@
 <template>
   <div class="deposit">
     <section class="reason pa-4">
+      <!-- <pre>
+        {{withdrawalRequest}}
+      </pre> -->
       <p class="reason-text">
         {{
-          claimedPayment.status === "pending"
-            ? "Your payment is yet to be validated. Keep an eye on your portfolio"
-            : claimedPayment.reason
+          withdrawalRequest.status === "pending"
+            ? "Your request is yet to be validated. Keep an eye on your payment portfolio"
+            : withdrawalRequest.reason
         }}
       </p>
     </section>
     <section class="mt-4 fields pa-4">
       <div class="pb-3">
-        <b>Status: </b> <span>{{ claimedPayment.status }} </span>
+        <b>Status: </b> <span>{{ withdrawalRequest.status }} </span>
       </div>
       <div class="pb-3">
-        <b>Upgrade Type: </b> <span>{{ claimedPayment.upgradeType }} </span>
+        <b>Requested Amount: </b> <span>{{ withdrawalRequest.amount }} </span>
       </div>
       <div class="pb-3">
-        <b>Coin used for payment: </b> <span>{{ claimedPayment.coin }} </span>
+        <b>Crypto Address: </b> <span>{{ withdrawalRequest.cryptoAddress }} </span>
+      </div>
+      <div class="pb-3">
+        <b>Coin used for payment: </b> <span>{{ withdrawalRequest.coin }} </span>
       </div>
       <div class="pb-3">
         <b>Date of Transaction: </b>
-        <span>{{ returnDate(claimedPayment.createdAt) }} </span>
+        <span>{{ returnDate(withdrawalRequest.createdAt) }} </span>
       </div>
     </section>
   </div>
@@ -30,12 +36,12 @@
 <script>
 export default {
   computed: {
-    claimedPayment() {
-      return this.$store.state.payment.claimedPayment;
+    withdrawalRequest() {
+      return this.$store.state.payment.withdrawalRequest;
     }
   },
   mounted() {
-    this.$store.dispatch("payment/getClaimedPayment", {
+    this.$store.dispatch("payment/getWithdrawalRequest", {
       id: this.$route.params.id
     });
   },

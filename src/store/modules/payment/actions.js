@@ -51,5 +51,11 @@ export default {
       console.log(result.data.data);
       commit("setClaimedPayment", result.data.data);
     });
+  },
+  getWithdrawalRequest({ commit }, { id }) {
+    instance.$api.get(`/payment/get-withdrawal-request/${id}`).then(result => {
+      console.log(result.data.data);
+      commit("setWithdrawalRequest", result.data.data);
+    });
   }
 };

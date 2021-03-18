@@ -7,5 +7,8 @@ export default {
   },
   setClaimedPayment(state, params) {
     state.claimedPayment = params;
+  },
+  setWithdrawalRequest(state, params) {
+    state.withdrawalRequest = params;
   }
 };
