@@ -40,13 +40,15 @@ import copyToClipboard from "@/mixins/copyToClipboard.js";
 export default {
   data: () => {
     return {
-      referralId: "098756jbht"
     };
   },
   mixins: [copyToClipboard],
   computed: {
     appName() {
       return this.$store.state.app.appName;
+    },
+    referralId() {
+      return this.$store.state.user.user.email
     }
   },
   methods: {
@@ -81,7 +83,7 @@ export default {
   input {
     height: 38px;
     width: fit-content;
-    max-width: 130px;
+    min-width: 130px;
     padding-left: 6px;
     background: $primary-white;
     border-radius: 5px;

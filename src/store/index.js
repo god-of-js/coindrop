@@ -6,6 +6,7 @@ import auth from "./modules/auth";
 import user from "./modules/user";
 import payment from "./modules/payment";
 import admin from "./modules/admin";
+import refferals from "./modules/refferals";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -18,6 +19,7 @@ export default new Vuex.Store({
     auth,
     user,
     payment,
-    admin
+    admin,
+    refferals
   }
 });

@@ -1,5 +1,4 @@
 import Vue from "vue";
-import router from "@/router";
 import axios from "axios";
 import get from "lodash/get";
 import { BASE_URL } from "../config/config";
@@ -40,7 +39,6 @@ service.interceptors.response.use(
         description
       });
     } else if (err.response.data.extraData.login) {
-      router.push("/login");
       store.dispatch("user/logout");
     }
     return Promise.reject(err.response);

@@ -14,6 +14,10 @@
           <span>{{ route.name }}</span>
         </router-link>
       </li>
+      <li @click="logOut" class="pa-3">
+        <v-icon class="mr-5 icon" color="#707A8A">mdi-power</v-icon>
+        <span>Log Out</span>
+      </li>
     </ul>
   </nav>
 </template>
@@ -49,6 +53,9 @@ export default {
   methods: {
     checkActiveRoute(path) {
       return path === this.$route.path || path === this.$route.meta.parentRoute;
+    },
+    logOut() {
+      this.$store.dispatch("user/logout");
     }
   }
 };

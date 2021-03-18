@@ -7,16 +7,16 @@
           <tr>
             <th class="text-left">Name</th>
             <th class="text-left">Registration Date</th>
-            <th class="text-left">Total Deposit</th>
-            <th class="text-left">Last Deposit</th>
+            <th class="text-left">Hash Rate</th>
+            <th class="text-left">Balance</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(referral, index) in referrals" :key="index">
-            <td>{{ referral.name }}</td>
-            <td>{{ referral.regDate }}</td>
-            <td>&#x24;{{ referral.totalDeposit }}</td>
-            <td>&#x24;{{ referral.lastDeposit }}</td>
+            <td>{{ referral.email }}</td>
+            <td>{{ returnDate(referral.createdAt) }}</td>
+            <td>{{ referral.hashRate }}</td>
+            <td>&#x24;{{ referral.balance }}</td>
           </tr>
         </tbody>
       </template>
@@ -24,48 +24,16 @@
   </div>
 </template>
 <script>
+import dateFormatter from "@/mixins/dateFormatter.js";
 export default {
-  data() {
-    return {
-      referrals: [
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        },
-        {
-          name: "Eze Henry",
-          regDate: "2021-02-15 20:51:05",
-          totalDeposit: "30000",
-          lastDeposit: "30000"
-        }
-      ]
-    };
+  mixins: [dateFormatter],
+  computed: {
+    referrals() {
+      return this.$store.state.refferals.referrals;
+    }
+  },
+  mounted() {
+    this.$store.dispatch("refferals/getRefferals");
   }
 };
 </script>

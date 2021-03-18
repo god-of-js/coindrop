@@ -10,21 +10,19 @@
       </p>
     </section>
     <section class="mt-4 fields pa-4">
-        <div class="pb-3"
-          ><b>Status: </b> <span>{{ claimedPayment.status }} </span></div
-        >
-        <div class="pb-3"
-          ><b>Upgrade Type: </b>
-          <span>{{ claimedPayment.upgradeType }} </span></div
-        >
-        <div class="pb-3"
-          ><b>Coin used for payment: </b>
-          <span>{{ claimedPayment.coin }} </span></div
-        >
-        <div class="pb-3"
-          ><b>Date of Transaction: </b>
-          <span>{{ returnDate(claimedPayment.createdAt) }} </span></div
-        >
+      <div class="pb-3">
+        <b>Status: </b> <span>{{ claimedPayment.status }} </span>
+      </div>
+      <div class="pb-3">
+        <b>Upgrade Type: </b> <span>{{ claimedPayment.upgradeType }} </span>
+      </div>
+      <div class="pb-3">
+        <b>Coin used for payment: </b> <span>{{ claimedPayment.coin }} </span>
+      </div>
+      <div class="pb-3">
+        <b>Date of Transaction: </b>
+        <span>{{ returnDate(claimedPayment.createdAt) }} </span>
+      </div>
     </section>
   </div>
 </template>
@@ -34,11 +32,11 @@ export default {
   computed: {
     claimedPayment() {
       return this.$store.state.payment.claimedPayment;
-    },
+    }
   },
   mounted() {
     this.$store.dispatch("payment/getClaimedPayment", {
-      id: this.$route.params.id,
+      id: this.$route.params.id
     });
   },
   methods: {

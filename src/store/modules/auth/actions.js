@@ -6,7 +6,7 @@ export default {
   register({ commit }, data) {
     instance.$api
       .post("/authentication/register", data)
-      .then(result => {
+      .then(async result => {
         cookies.set("User", result.data.data);
         cookies.set("JWT", result.data.data.JWT);
         commit("user/saveUser", result.data.data, { root: true });
@@ -18,7 +18,7 @@ export default {
   login({ commit }, data) {
     instance.$api
       .post("/authentication/login", data)
-      .then(result => {
+      .then(async result => {
         cookies.set("User", result.data.data);
         cookies.set("JWT", result.data.data.JWT);
         commit("user/saveUser", result.data.data, { root: true });
