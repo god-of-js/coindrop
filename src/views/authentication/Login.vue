@@ -21,7 +21,9 @@
         @data="e => (data.password = e)"
         :requiredInput="true"
       />
-      <custom-button class="mt-2">Log In</custom-button>
+      <custom-button class="mt-2" :inactive="disabled" :loading="loading"
+        >Log In</custom-button
+      >
     </form>
     <div class="mt-4 login-text">
       <span>
@@ -44,17 +46,24 @@ export default {
       data: {
         email: null,
         password: null
-      }
+      },
+      loading: false
     };
   },
   computed: {
     appName() {
       return this.$store.state.app.appName;
+    },
+    disabled() {
+      return !this.data.email || !this.data.password;
     }
   },
   methods: {
-    login() {
-      this.$store.dispatch("auth/login", this.data);
+    async login() {
+      this.loading = true;
+      await this.$store.dispatch("auth/login", this.data);
+      // alert("done");
+      this.loading = false;
     }
   }
 };
