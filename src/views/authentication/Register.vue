@@ -25,7 +25,7 @@
         class="mt-2"
         @data="e => (data.refEmail = e)"
       />
-      <custom-button class="mt-2">Create Account</custom-button>
+      <custom-button class="mt-2" :inactive="disabled" :loading="loading">Create Account</custom-button>
       <p class="acknowledgement-text mt-2 text-left">
         By creating your account, you hereby admit that you have read
         {{ appName }}'s
@@ -49,17 +49,23 @@ export default {
         email: null,
         password: null,
         refEmail: null
-      }
+      },
+      loading: false
     };
   },
   computed: {
     appName() {
       return this.$store.state.app.appName;
+    },
+    disabled() {
+      return !this.data.email || !this.data.password;
     }
   },
   methods: {
-    register() {
-      this.$store.dispatch("auth/register", this.data);
+    async register() {
+      this.loading = true;
+      await this.$store.dispatch("auth/register", this.data);
+      this.loading = false;
     }
   }
 };
