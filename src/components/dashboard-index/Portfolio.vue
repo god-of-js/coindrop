@@ -32,33 +32,35 @@ export default {
   props: {
     showActions: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   data: () => {
     return {
       cardsData: [
         {
           name: "Balance",
-          value: 0,
+          value: 0
         },
         {
           name: "Hash Rate",
-          value: 0,
+          value: 0
         },
         {
           name: "No of Referrals",
-          value: 0,
-        },
-      ],
+          value: 0
+        }
+      ]
     };
   },
   components: {
-    PortfolioCard,
+    PortfolioCard
   },
   mounted() {
-    this.$store.dispatch("user/getUserProfile");
-  },
+    this.$nextTick(function() {
+      this.$store.dispatch("user/getUserProfile");
+    });
+  }
 };
 </script>
 

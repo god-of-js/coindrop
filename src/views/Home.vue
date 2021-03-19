@@ -1,5 +1,7 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    Lorem ip
+  </div>
 </template>
 
 <script>

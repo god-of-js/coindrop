@@ -57,9 +57,6 @@ export default {
       return this.$store.state.app.appName;
     }
   },
-  mounted() {
-    console.log(this);
-  },
   methods: {
     register() {
       this.$store.dispatch("auth/register", this.data);

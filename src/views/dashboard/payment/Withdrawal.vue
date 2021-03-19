@@ -20,10 +20,12 @@
         <b>Requested Amount: </b> <span>{{ withdrawalRequest.amount }} </span>
       </div>
       <div class="pb-3">
-        <b>Crypto Address: </b> <span>{{ withdrawalRequest.cryptoAddress }} </span>
+        <b>Crypto Address: </b>
+        <span>{{ withdrawalRequest.cryptoAddress }} </span>
       </div>
       <div class="pb-3">
-        <b>Coin used for payment: </b> <span>{{ withdrawalRequest.coin }} </span>
+        <b>Coin used for payment: </b>
+        <span>{{ withdrawalRequest.coin }} </span>
       </div>
       <div class="pb-3">
         <b>Date of Transaction: </b>

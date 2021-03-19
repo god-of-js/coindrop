@@ -25,13 +25,13 @@ import Plan from "./Plan";
 import { plans } from "@/helpers/plans.js";
 export default {
   components: {
-    Plan,
+    Plan
   },
   data() {
     return {
-      plans,
+      plans
     };
-  },
+  }
 };
 </script>
 

@@ -1,4 +1,5 @@
 import Dashboard from "@/views/Dashboard";
+import store from "@/store";
 export default {
   path: "/dashboard",
   name: "Dashboard",
@@ -73,5 +74,12 @@ export default {
         }
       ]
     }
-  ]
+  ],
+  beforeEnter(to, from, next) {
+    if (!store.state.user.user.JWT) {
+      next("/login");
+    } else {
+      next();
+    }
+  }
 };

@@ -10,11 +10,8 @@ export default {
     commit("saveUser", {});
   },
   getUserProfile({ state, commit }) {
-    setTimeout(function () {
-      instance.$api.get(`/user/user-profile/${state.user._id}`).then(response => {
-        commit("saveUser", response.data.data);
-      });
-    }, 10000);
-
+    instance.$api.get(`/user/user-profile/${state.user._id}`).then(response => {
+      commit("saveUser", response.data.data);
+    });
   }
 };
