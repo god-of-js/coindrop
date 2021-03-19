@@ -5,8 +5,7 @@
     </v-avatar>
     <div class="welcome-text">
       <p>
-        <b>Hey {{ userName }}</b
-        >, Welcome to your {{ appName }} dashboard.
+        <b>Hey {{ userName }}</b>, Welcome to your {{ appName }} dashboard.
       </p>
       <p>What would you be doing today?</p>
     </div>
@@ -23,9 +22,9 @@ export default {
       return this.$store.state.app.appName;
     },
     initials() {
-      let name = "Henry Eze",
+      let email = this.$store.state.user.user.email,
         initials;
-      initials = name.split(" ")[0][0] + name.split(" ")[0][1];
+      initials = email.split("")[0] + email.split("")[1];
       return initials;
     }
   }

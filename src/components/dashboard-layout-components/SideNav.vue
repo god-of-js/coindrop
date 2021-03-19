@@ -41,11 +41,6 @@ export default {
           path: "/referrals",
           name: "Referrals",
           icon: "mdi-account-multiple-plus-outline"
-        },
-        {
-          path: "/settings",
-          name: "Settings",
-          icon: "mdi-tune"
         }
       ]
     };

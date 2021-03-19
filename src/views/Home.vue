@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    Lorem ip
   </div>
 </template>
 
