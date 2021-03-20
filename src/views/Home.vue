@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
+  <main class="home">
     <top-nav />
-  </div>
+    <router-view />
+  </main>
 </template>
 
 <script>

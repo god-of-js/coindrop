@@ -1,5 +1,9 @@
 <template>
-  <div></div>
+  <div class="home">
+    <section class="intro">
+
+    </section>
+  </div>
 </template>
 
 <script>

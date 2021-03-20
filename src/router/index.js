@@ -1,16 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 import Auth from "./modules/Auth";
 import Dashboard from "./modules/Dashboard";
+import Home from "./modules/Home"
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
   {
     path: "*",
     redirect: "/"
@@ -20,6 +15,7 @@ const routes = [
     name: "About",
     component: () => import("../views/About.vue")
   },
+  Home,
   Auth,
   Dashboard
 ];
