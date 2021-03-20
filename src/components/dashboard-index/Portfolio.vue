@@ -13,14 +13,17 @@
       >
     </div>
     <v-row>
-      <v-col
-        sm="12"
-        md="4"
-        lg="4"
-        v-for="(card, index) in cardsData"
-        :key="index"
-      >
-        <portfolio-card :value="card.value" :name="card.name" />
+      <v-col sm="12" md="4" lg="4">
+        <portfolio-card :value="userData.balance" :name="'Balance'" />
+      </v-col>
+      <v-col sm="12" md="4" lg="4">
+        <portfolio-card :value="userData.hashRate" :name="'Hash Rate'" />
+      </v-col>
+      <v-col sm="12" md="4" lg="4">
+        <portfolio-card
+          :value="userData.noOfRefferals"
+          :name="'No of Referrals'"
+        />
       </v-col>
     </v-row>
   </div>
@@ -52,6 +55,11 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    userData() {
+      return this.$store.state.user.user;
+    }
   },
   components: {
     PortfolioCard

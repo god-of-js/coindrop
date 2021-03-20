@@ -25,7 +25,9 @@
         class="mt-2"
         @data="e => (data.refEmail = e)"
       />
-      <custom-button class="mt-2" :inactive="disabled" :loading="loading">Create Account</custom-button>
+      <custom-button class="mt-2" :inactive="disabled" :loading="loading"
+        >Create Account</custom-button
+      >
       <p class="acknowledgement-text mt-2 text-left">
         By creating your account, you hereby admit that you have read
         {{ appName }}'s

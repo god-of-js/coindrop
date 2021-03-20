@@ -5,7 +5,8 @@
     </v-avatar>
     <div class="welcome-text">
       <p>
-        <b>Hey {{ userName }}</b>, Welcome to your {{ appName }} dashboard.
+        <b>Hey {{ userName }}</b
+        >, Welcome to your {{ appName }} dashboard.
       </p>
       <p>What would you be doing today?</p>
     </div>
