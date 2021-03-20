@@ -7,7 +7,11 @@
       <li>
         <router-link to="/about" class="route-link">Contact Us</router-link>
       </li>
-      <li><custom-button>Mine Crypto</custom-button></li>
+      <li>
+        <router-link to="/dashboard"
+          ><custom-button>Mine Crypto</custom-button></router-link
+        >
+      </li>
     </ul>
 
     <button v-if="smallDevices">
@@ -52,7 +56,7 @@ export default {
     }
   }
   .icon {
-      color: $gold-text;
+    color: $gold-text;
   }
 }
 ::v-deep {

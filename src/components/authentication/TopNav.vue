@@ -1,6 +1,8 @@
 <template>
   <nav id="nav" class="">
-    <span class="nav-name" v-text="appName" />
+    <router-link to="/">
+      <span class="nav-name" v-text="appName" />
+    </router-link>
   </nav>
 </template>
 
@@ -9,8 +11,8 @@ export default {
   computed: {
     appName() {
       return this.$store.state.app.appName;
-    }
-  }
+    },
+  },
 };
 </script>
 
