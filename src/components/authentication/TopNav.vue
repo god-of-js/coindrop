@@ -11,8 +11,8 @@ export default {
   computed: {
     appName() {
       return this.$store.state.app.appName;
-    },
-  },
+    }
+  }
 };
 </script>
 

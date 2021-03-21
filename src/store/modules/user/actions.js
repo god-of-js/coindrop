@@ -1,6 +1,6 @@
-import Vue from "vue";
-const instance = new Vue();
+
 import cookies from "@/plugins/cookies.js";
+import api from "@/plugins/api.js";
 import router from "@/router";
 export default {
   logout({ commit }) {
@@ -10,7 +10,7 @@ export default {
     commit("saveUser", {});
   },
   getUserProfile({ state, commit }) {
-    instance.$api.get(`/user/user-profile/${state.user._id}`).then(response => {
+    api.get(`/user/user-profile/${state.user._id}`).then(response => {
       commit("saveUser", response.data.data);
     });
   }

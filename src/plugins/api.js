@@ -6,6 +6,7 @@ import Cookies from "./cookies";
 import store from "@/store";
 const instance = new Vue();
 const token = Cookies.getToken();
+console.log(token);
 const config = {
   baseURL: `${BASE_URL}/api/v1`,
   timeout: 5000,

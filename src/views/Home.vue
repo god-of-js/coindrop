@@ -7,7 +7,7 @@
 
 <script>
 // @ is an alias to /src
-import TopNav from "@/components/home/TopNav"
+import TopNav from "@/components/home/TopNav";
 export default {
   name: "Home",
   components: {

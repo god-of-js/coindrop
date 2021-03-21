@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Auth from "./modules/Auth";
 import Dashboard from "./modules/Dashboard";
-import Home from "./modules/Home"
+import Home from "./modules/Home";
 Vue.use(VueRouter);
 
 const routes = [
