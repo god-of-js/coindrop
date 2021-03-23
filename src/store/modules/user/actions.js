@@ -1,4 +1,3 @@
-
 import cookies from "@/plugins/cookies.js";
 import api from "@/plugins/api.js";
 import router from "@/router";

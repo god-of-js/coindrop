@@ -1,20 +1,39 @@
 <template>
-  <div class="home">
+  <main class="home">
     <section class="intro d-flex justify-center flex-column align-center">
       <h1 class="text-center">Mine crypto currencies</h1>
       <span class="">Join one of the world's best crypto mining sites.</span>
-      <custom-button class="pa-6">Register Now</custom-button>
+      <router-link to="/register">
+        <custom-button class="pa-6">Register Now</custom-button></router-link
+      >
     </section>
-    <section class="cryptorates">
+    <section class="cryptorates pb-7">
       <crypto-rates></crypto-rates>
     </section>
-  </div>
+    <section>
+      <get-in-touch />
+    </section>
+    <section
+      class="actions mt-6 d-flex justify-center align-center flex-column"
+    >
+      <h1 class="mining-section">Choose Mining Option</h1>
+      <div class="d-flex">
+        <custom-button class="ma-4 mr-2 pl-4 pr-4"
+          >Mine Crypto Now</custom-button
+        >
+        <custom-button class="ma-4 ml-2 pl-4 pr-4"
+          >Increase Hash Rate</custom-button
+        >
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>
 export default {
   components: {
-    CryptoRates: () => import("@/components/home/CryptoRates.vue")
+    CryptoRates: () => import("@/components/home/CryptoRates.vue"),
+    GetInTouch: () => import("@/components/home/GetInTouch.vue")
   }
 };
 </script>
@@ -38,6 +57,15 @@ export default {
     color: $text-grey;
     margin-bottom: 15px;
   }
+}
+.actions {
+  background: $primary-dark-color;
+  min-height: 30vh;
+}
+.mining-section {
+  color: $primary-white;
+  font-weight: bold;
+  font-size: 1.7em;
 }
 ::v-deep {
   #btn {

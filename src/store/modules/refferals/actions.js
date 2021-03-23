@@ -1,8 +1,7 @@
-import Vue from "vue";
-const instance = new Vue();
+import api from "@/plugins/api";
 export default {
   getRefferals({ rootState, commit }) {
-    instance.$api
+    api
       .get(`/referrals/refferals/${rootState.user.user.email}`)
       .then(response => {
         console.log(response.data.data);

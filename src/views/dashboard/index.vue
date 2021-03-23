@@ -12,6 +12,7 @@
 </template>
 
 <script>
+// import Vue from "vue";
 export default {
   components: {
     WelcomeCard: () => import("@/components/dashboard-index/WelcomeCard.vue"),
@@ -19,12 +20,7 @@ export default {
     Tasks: () => import("@/components/dashboard-index/Tasks.vue"),
     ReferCard: () => import("@/components/dashboard-index/ReferCard.vue")
   },
-  mounted() {
-    this.getUserProfile();
-  },
-  methods: {
-    getUserProfile() {}
-  }
+  methods: {}
 };
 </script>
 

@@ -1,4 +1,4 @@
-import api from "../../../plugins/api"
+import api from "../../../plugins/api";
 export default {
   namespaced: true,
   state: {
@@ -16,7 +16,7 @@ export default {
       api.get("/application/crypto-market").then(request => {
         console.log(request.data.data);
         commit("setCryptoMarket", request.data.data);
-      })
+      });
     }
   }
 };

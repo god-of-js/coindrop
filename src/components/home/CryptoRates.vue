@@ -1,5 +1,5 @@
 <template>
-  <div class="crypto-rates mt-7">
+  <div class="crypto-rates mt-7 mb-7">
     <v-simple-table>
       <template v-slot:default>
         <thead>
@@ -10,10 +10,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(market, index) in cryptoMarket" :key="index" class="pb-5 pt-5" id="table-row">
+          <tr
+            v-for="(market, index) in cryptoMarket"
+            :key="index"
+            class="pb-5 pt-5"
+            id="table-row"
+          >
             <td class="d-flex align-center ">
               <v-avatar class="mr-4">
-                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+                <img
+                  src="https://cdn.vuetifyjs.com/images/john.jpg"
+                  alt="John"
+                />
               </v-avatar>
               <span>{{ market.name }} </span>
             </td>
@@ -31,11 +39,11 @@ export default {
   computed: {
     cryptoMarket() {
       return this.$store.state.app.cryptoMarket;
-    },
+    }
   },
   mounted() {
     this.$store.dispatch("app/getCryptoMarket");
-  },
+  }
 };
 </script>
 
@@ -46,7 +54,4 @@ export default {
   @include box-shadow();
   margin: auto;
 }
-// #table-row{
-//     height: 100px;
-// }
 </style>

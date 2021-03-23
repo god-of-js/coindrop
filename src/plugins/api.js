@@ -3,11 +3,10 @@ import axios from "axios";
 import get from "lodash/get";
 import { BASE_URL } from "../config/config";
 import Cookies from "./cookies";
-import store from "@/store";
+import store from "../store/index";
 const instance = new Vue();
-const token = Cookies.getToken();
-console.log(token);
-const config = {
+let token = Cookies.getToken();
+let config = {
   baseURL: `${BASE_URL}/api/v1`,
   timeout: 5000,
   headers: {
@@ -34,6 +33,11 @@ service.interceptors.response.use(
       "Something went wrong"
     );
     console.log(err.response, "response");
+    if (
+      description === "JWT was not provided" ||
+      description === "You are not allowed to view this user's information."
+    )
+      location.reload();
     if (!err.response.data.customHandle) {
       instance.$notification.error({
         message: "Error",

@@ -48,6 +48,7 @@ export default {
   padding: 15px;
   padding-left: 5%;
   text-align: left;
+  z-index: 99;
   .nav-name {
     color: $gold-text;
     font-weight: 900;

@@ -1,9 +1,8 @@
-import Vue from "vue";
-const instance = new Vue();
+import api from "@/plugins/api";
 export default {
   claimPayment({ rootState }, data) {
     return new Promise(resolve => {
-      instance.$api
+      api
         .post("/payment/user-claims-payment", {
           id: rootState.user.user._id,
           ...data
@@ -15,7 +14,7 @@ export default {
   },
   requestWithdrawal({ rootState, dispatch, commit }, data) {
     return new Promise((resolve, reject) => {
-      instance.$api
+      api
         .post("/payment/make-withdrawal-request", {
           userId: rootState.user.user._id,
           ...data
@@ -31,7 +30,7 @@ export default {
     });
   },
   getWithdrawalRequests({ commit, rootState }) {
-    instance.$api
+    api
       .get(`/payment/get-withdrawal-requests/${rootState.user.user._id}`)
       .then(result => {
         console.log(result.data.data);
@@ -39,7 +38,7 @@ export default {
       });
   },
   getClaimedPayments({ commit, rootState }) {
-    instance.$api
+    api
       .get(`/payment/claimed-payments/${rootState.user.user._id}`)
       .then(result => {
         console.log(result.data.data);
@@ -47,13 +46,13 @@ export default {
       });
   },
   getClaimedPayment({ commit }, { id }) {
-    instance.$api.get(`/payment/claimed-payment/${id}`).then(result => {
+    api.get(`/payment/claimed-payment/${id}`).then(result => {
       console.log(result.data.data);
       commit("setClaimedPayment", result.data.data);
     });
   },
   getWithdrawalRequest({ commit }, { id }) {
-    instance.$api.get(`/payment/get-withdrawal-request/${id}`).then(result => {
+    api.get(`/payment/get-withdrawal-request/${id}`).then(result => {
       console.log(result.data.data);
       commit("setWithdrawalRequest", result.data.data);
     });

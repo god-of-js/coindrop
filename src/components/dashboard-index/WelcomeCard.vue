@@ -23,10 +23,12 @@ export default {
       return this.$store.state.app.appName;
     },
     initials() {
-      let email = this.$store.state.user.user.email,
-        initials;
-      initials = email.split("")[0] + email.split("")[1];
-      return initials;
+      if (this.$store.state.user.user.email) {
+        let email = this.$store.state.user.user.email ?? "",
+          initials;
+        initials = email.split("")[0] + email.split("")[1];
+        return initials;
+      } else return "";
     }
   }
 };
