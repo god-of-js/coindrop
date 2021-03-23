@@ -4,7 +4,7 @@ import cookies from "@/plugins/cookies.js";
 export default {
   register({ commit }, data) {
     return new Promise((resolve, reject) => {
-      api
+      api()
         .post("/authentication/register", data)
         .then(async result => {
           cookies.set("JWT", result.data.data.JWT);
@@ -22,7 +22,8 @@ export default {
   },
   login({ commit }, data) {
     return new Promise(resolve => {
-      api.post("/authentication/login", data)
+      api()
+        .post("/authentication/login", data)
         .then(async result => {
           cookies.set("JWT", result.data.data.JWT);
           cookies.set("User", result.data.data);

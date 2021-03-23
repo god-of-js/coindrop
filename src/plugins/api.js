@@ -33,11 +33,6 @@ service.interceptors.response.use(
       "Something went wrong"
     );
     console.log(err.response, "response");
-    if (
-      description === "JWT was not provided" ||
-      description === "You are not allowed to view this user's information."
-    )
-      location.reload();
     if (!err.response.data.customHandle) {
       instance.$notification.error({
         message: "Error",
@@ -49,4 +44,8 @@ service.interceptors.response.use(
     return Promise.reject(err.response);
   }
 );
-export default service;
+const api = token => {
+  token ? (service.defaults.headers.Authorization = `Bearer ${token}`) : false;
+  return service;
+};
+export default api;

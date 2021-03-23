@@ -1,7 +1,7 @@
 import api from "@/plugins/api";
 export default {
   getRefferals({ rootState, commit }) {
-    api
+    api(rootState.user.user.JWT)
       .get(`/referrals/refferals/${rootState.user.user.email}`)
       .then(response => {
         console.log(response.data.data);

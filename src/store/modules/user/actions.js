@@ -7,10 +7,13 @@ export default {
     cookies.remove("JWT");
     cookies.remove("User");
     commit("saveUser", {});
+    location.reload();
   },
   getUserProfile({ state, commit }) {
-    api.get(`/user/user-profile/${state.user._id}`).then(response => {
-      commit("saveUser", response.data.data);
-    });
+    api(state.user.JWT)
+      .get(`/user/user-profile/${state.user._id}`)
+      .then(response => {
+        commit("saveUser", response.data.data);
+      });
   }
 };
