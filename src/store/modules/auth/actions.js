@@ -3,7 +3,7 @@ import router from "@/router";
 import cookies from "@/plugins/cookies.js";
 export default {
   register({ commit }, data) {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       api()
         .post("/authentication/register", data)
         .then(async result => {
@@ -12,11 +12,8 @@ export default {
           commit("user/saveUser", result.data.data, { root: true });
           router.push("/dashboard");
         })
-        .then(() => {
+        .finally(() => {
           resolve();
-        })
-        .catch(() => {
-          reject();
         });
     });
   },
