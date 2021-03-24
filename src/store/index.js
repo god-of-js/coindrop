@@ -6,13 +6,11 @@ import auth from "./modules/auth";
 import user from "./modules/user";
 import payment from "./modules/payment";
 import admin from "./modules/admin";
+import notifications from "./modules/notifications";
 import refferals from "./modules/refferals";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
   modules: {
     app,
     modal,
@@ -20,6 +18,7 @@ export default new Vuex.Store({
     user,
     payment,
     admin,
-    refferals
+    refferals,
+    notifications
   }
 });

@@ -10,6 +10,9 @@ export default {
     appName() {
       return this.$store.state.app.appName;
     }
+  },
+  mounted() {
+    this.$store.dispatch("notifications/subscribeToPubNub")
   }
 };
 </script>

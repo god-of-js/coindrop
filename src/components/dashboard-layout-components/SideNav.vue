@@ -41,6 +41,11 @@ export default {
           path: "/referrals",
           name: "Referrals",
           icon: "mdi-account-multiple-plus-outline"
+        },
+        {
+          path: "/tasks",
+          name: "Tasks",
+          icon: "mdi-clipboard-text-outline"
         }
       ]
     };
