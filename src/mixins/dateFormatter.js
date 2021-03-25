@@ -1,8 +1,10 @@
 export default {
   methods: {
     returnDate(date) {
-      const data = new Date(date);
-      return `${data.getDay()}/${data.getMonth()}/${data.getFullYear()}`;
+      return new Date(date).toDateString();
+    },
+    returnDateAndTime(date) {
+      return new Date(date).toString("YYYY-MM-dd").split("GMT")[0];
     }
   }
 };
