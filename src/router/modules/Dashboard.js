@@ -73,6 +73,10 @@ export default {
           }
         }
       ]
+    },
+    {
+      path: "/tasks",
+      component: () => import("@/views/dashboard/Tasks.vue")
     }
   ],
   beforeEnter(to, from, next) {

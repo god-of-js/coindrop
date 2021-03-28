@@ -9,8 +9,6 @@ export default {
     });
     pubnub.addListener({
       message: notification => {
-        console.log(notification);
-        alert(notification.message.text);
         commit("setNotification", notification.message);
       }
     });
