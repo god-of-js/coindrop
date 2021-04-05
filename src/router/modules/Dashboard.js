@@ -77,6 +77,13 @@ export default {
     {
       path: "/tasks",
       component: () => import("@/views/dashboard/Tasks.vue")
+    },
+    {
+      path: "/task/:id",
+      component: () => import("@/views/dashboard/tasks/Task.vue"),
+      meta: {
+        parentRoute: "/tasks"
+      }
     }
   ],
   beforeEnter(to, from, next) {

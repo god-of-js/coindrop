@@ -1,1 +1,5 @@
-export default {};
+export default {
+  setUserTasks(state, tasks) {
+    state.tasks = tasks;
+  }
+};
