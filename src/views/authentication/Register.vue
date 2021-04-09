@@ -20,6 +20,12 @@
         :requiredInput="true"
       />
       <custom-input
+        :label="'SSN(optional)'"
+        :inputType="'text'"
+        class="mt-2"
+        @data="e => (data.ssn = e)"
+      />
+      <custom-input
         :label="'Referral Email(optional)'"
         :inputType="'email'"
         class="mt-2"
@@ -50,7 +56,8 @@ export default {
       data: {
         email: null,
         password: null,
-        refEmail: null
+        refEmail: null,
+        ssn: null
       },
       loading: false
     };

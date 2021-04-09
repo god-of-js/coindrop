@@ -8,9 +8,10 @@
     <form action="" class="mt-4" @submit.prevent="makeRequest">
       <custom-input
         class="mt-2"
-        :label="'Amount to withdraw'"
+        :label="'Amount to withdraw(current balance)'"
         :inputType="'number'"
-        :requiredInput="true"
+        :disabled="true"
+        :placeholder="userBalance"
         @data="e => (data.amount = e)"
       />
       <custom-input
@@ -45,16 +46,24 @@ export default {
   },
   computed: {
     checkValues() {
-      return !this.data.amount || !this.data.cryptoAddress;
+      return !this.data.cryptoAddress;
+    },
+    userBalance() {
+      return this.$store.state.user.user.balance;
     }
   },
   methods: {
     makeRequest() {
       this.loading = true;
-      this.data.amount = Number(this.data.amount);
-      console.log(typeof this.data.amount);
-      this.$store.dispatch("payment/requestWithdrawal", this.data);
-      this.loading = false;
+      this.data.amount = Number(this.userBalance);
+      this.$store
+        .dispatch("payment/requestWithdrawal", this.data)
+        .then(() => {
+          this.$store.commit("modal/setActiveModal", {});
+        })
+        .finally(() => {
+          this.loading = false;
+        });
     },
     selectCoin(e) {
       this.data.coin = e;

@@ -8,11 +8,11 @@
     <v-row class="pt-8 d-flex justify-center">
       <v-col
         sm="12"
-        md="4"
+        md="3"
+        class="ma-1"
         lg="3"
         v-for="(plan, index) in plans"
         :key="index"
-        class="ma-1"
       >
         <plan :plan="plan"
       /></v-col>

@@ -32,7 +32,7 @@ service.interceptors.response.use(
       "data.message",
       "Something went wrong"
     );
-    console.log(err.response, "response");
+    console.log(err.response, err, "response");
     if (!err.response.data.customHandle) {
       instance.$notification.error({
         message: "Error",

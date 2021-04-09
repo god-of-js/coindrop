@@ -5,6 +5,7 @@
       :type="inputType"
       :placeholder="placeholder"
       v-model="value"
+      :disabled="disabled"
       :required="requiredInput"
       @input="$emit('data', value)"
     />
@@ -35,6 +36,10 @@ export default {
       default: "text"
     },
     requiredInput: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     }

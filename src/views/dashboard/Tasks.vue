@@ -4,13 +4,14 @@
       <h1>Tasks</h1>
     </header>
     <ul class="tasks-container ma-6 pl-0">
-      <li v-for="(task, index) in 5" :key="index" class="pa-4">
-        <h2 class="pb-0 mb-0">Account Verification</h2>
+      <li v-for="(task, index) in tasks" :key="index" class="pa-4">
+        <b class="pb-0 mb-0">{{ task.header }}</b>
         <p>
-          Verify your account by heading to the verify account part of the
-          dashboard.
+          {{ task.text }}
         </p>
-        <router-link to="/task/1" class="see-more">See more</router-link>
+        <router-link :to="task.nextRoute" class="see-more"
+          >See more</router-link
+        >
       </li>
     </ul>
   </div>
@@ -19,6 +20,11 @@
 <script>
 export default {
   name: "Tasks",
+  computed: {
+    tasks() {
+      return this.$store.state.tasks.tasks;
+    }
+  },
   mounted() {
     this.$store.dispatch("tasks/getTasks");
   }

@@ -23,11 +23,19 @@
         sit cumque itaque magni obcaecati debitis similique unde odit
         necessitatibus?
       </p>
-
-      <router-link to="/task/1" class="see-more">Take Action</router-link>
+      <div class="d-flex justify-space-between pt-5">
+        <router-link to="/task/1" class="see-more">Take Action</router-link>
+        <router-link to="/task/1" class="see-more">View Document</router-link>
+      </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {}
+};
+</script>
 
 <style lang="scss" scoped>
 @import "@/assets/styles/colors.scss";
