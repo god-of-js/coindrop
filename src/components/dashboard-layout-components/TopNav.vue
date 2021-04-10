@@ -13,6 +13,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch("notifications/subscribeToPubNub");
+    this.$store.dispatch("tasks/subscribeToPubNub");
   }
 };
 </script>

@@ -9,7 +9,7 @@
         <p>
           {{ task.text }}
         </p>
-        <router-link :to="task.nextRoute" class="see-more"
+        <router-link  :to="'/task/'+ task._id" class="see-more"
           >See more</router-link
         >
       </li>
