@@ -7,12 +7,10 @@ export default {
     );
     commit("setUserTasks", request.data.data.reverse());
   },
-  async getTask({ rootState, commit }, {id}) {
+  async getTask({ rootState, commit }, { id }) {
     console.log(id);
-    let request = await api(rootState.user.user.JWT).get(
-      "/tasks/task/" + id
-    );
-    console.log(request.data.data)
+    let request = await api(rootState.user.user.JWT).get("/tasks/task/" + id);
+    console.log(request.data.data);
     commit("setTask", request.data.data);
   },
   subscribeToPubNub({ rootState, commit }) {
@@ -25,5 +23,5 @@ export default {
         commit("setUserTasks", [task.message]);
       }
     });
-  },
+  }
 };
