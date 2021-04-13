@@ -24,6 +24,11 @@ export default {
       component: () => import("@/views/dashboard/Referrals.vue")
     },
     {
+      path: "/payment/pay-tax/:id",
+      name: "pay-task",
+      component: () => import("@/views/dashboard/payment/Tax.vue")
+    },
+    {
       path: "/payment",
       name: "Payment",
       component: () => import("@/views/dashboard/Payment.vue"),

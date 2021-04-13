@@ -24,6 +24,12 @@ import DepositTips from "@/components/payment/PaymentTips.vue";
 import CoinPayment from "@/components/payment/CoinPayment.vue";
 import { plans } from "@/helpers/plans.js";
 export default {
+  props: {
+    routeHead: {
+      type: String,
+      default: "/payment/upgrade"
+    }
+  },
   data: () => {
     return {
       componentId: "",
@@ -40,7 +46,10 @@ export default {
   },
   methods: {
     changeCoin(coin) {
-      this.$router.push(`/payment/upgrade/${this.$route.params.type}/${coin}`);
+      console.log(this.$route)
+      if (this.$route.name) {
+        this.$router.push(`${this.routeHead}/${this.$route.params.type}/${coin}`);
+      }
       this.componentId = coin;
     },
     async finishTransaction() {

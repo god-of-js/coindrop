@@ -10,8 +10,8 @@
       >
     </header>
     <ul class="tasks ma-0 pa-0">
-      <li v-for="(task, index) in 3" class="task pa-4" :key="index">
-        <p class="ma-0">Upgrade account to stallion</p>
+      <li v-for="(task, index) in tasks" class="task pa-4" :key="index">
+        <p class="ma-0">{{ task.header }}</p>
         <div class="date pb-3">12/12/2021</div>
       </li>
     </ul>
@@ -19,7 +19,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    tasks() {
+      return this.$store.state.tasks.tasks;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

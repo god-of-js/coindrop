@@ -21,7 +21,10 @@
         :requiredInput="true"
         @data="e => (data.cryptoAddress = e)"
       />
-      <crypto-selector @selectedcoin="e => (data.coin = e)" />
+      <crypto-selector
+        @selectedcoin="e => (data.coin = e)"
+        :coins="['Safemoon']"
+      />
       <custom-button class="mt-4" :inactive="checkValues" :loading="loading"
         >Withdraw Funds
       </custom-button>
@@ -34,7 +37,7 @@ export default {
   data: () => {
     return {
       data: {
-        coin: "BTC",
+        coin: "Safemoon",
         cryptoAddress: null,
         amount: null
       },

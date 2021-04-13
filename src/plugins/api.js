@@ -2,16 +2,11 @@ import Vue from "vue";
 import axios from "axios";
 import get from "lodash/get";
 import { BASE_URL } from "../config/config";
-import Cookies from "./cookies";
 import store from "../store/index";
 const instance = new Vue();
-let token = Cookies.getToken();
 let config = {
   baseURL: `${BASE_URL}/api/v1`,
-  timeout: 5000,
-  headers: {
-    Authorization: `Bearer ${token}`
-  }
+  timeout: 5000
 };
 const service = axios.create(config);
 service.interceptors.response.use(

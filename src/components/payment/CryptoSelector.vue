@@ -1,6 +1,6 @@
 <template>
   <v-select
-    :items="items"
+    :items="coins"
     label="Select Coin to pay with"
     class="mt-4"
     dense
@@ -12,6 +12,12 @@
 
 <script>
 export default {
+  props: {
+    coins: {
+      type: Array,
+      default: () => ["BTC", "ETH"]
+    }
+  },
   data: () => ({
     items: ["BTC", "ETH"],
     coin: "BTC"
