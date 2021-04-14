@@ -26,6 +26,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch("notifications/getNotifications");
+    this.$store.dispatch("tasks/getTasks");
   },
   methods: {}
 };

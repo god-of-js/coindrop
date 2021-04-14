@@ -42,9 +42,6 @@ export default {
   @include box-shadow();
   li {
     list-style-type: none;
-    &:hover {
-      background: $secondary-background;
-    }
   }
   header {
     border-bottom: 1px solid $border-color;

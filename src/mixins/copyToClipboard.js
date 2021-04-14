@@ -1,6 +1,6 @@
 export default {
   methods: {
-    getReferralCode() {
+    initiateCopy() {
       var copyText = document.getElementById("copy-item");
       copyText.select();
       copyText.setSelectionRange(0, 99999);

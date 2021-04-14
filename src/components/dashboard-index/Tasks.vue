@@ -1,11 +1,11 @@
 <template>
-  <div class="task-center pb-3">
+  <div class="task-center">
     <header class="d-flex align-center justify-space-between pa-3 pb-1 mb-1">
       <h4>Tasks</h4>
-      <router-link to="/tasks"
-        >See all
-        <v-icon class="icon" color="#212833"
-          >mdi-chevron-right</v-icon
+      <router-link to="/tasks">
+        <small>
+          See all
+          <v-icon class="icon" color="#212833">mdi-chevron-right</v-icon></small
         ></router-link
       >
     </header>
@@ -23,8 +23,8 @@ export default {
   computed: {
     tasks() {
       return this.$store.state.tasks.tasks;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -42,7 +42,7 @@ export default {
   }
   .task {
     border-bottom: 1px solid $border-color;
-    font-size: 0.8em;
+    font-size: 0.9em;
     height: fit-content;
     .date {
       float: right;
