@@ -42,18 +42,26 @@ export default {
     CoinPayment
   },
   mounted() {
-    this.componentId = this.$route.params.crypto;
+    console.log(this.$route.params.id);
   },
   methods: {
     changeCoin(coin) {
-      console.log(this.$route)
-      if (this.$route.name) {
-        this.$router.push(`${this.routeHead}/${this.$route.params.type}/${coin}`);
+      console.log(this.$route);
+      if (this.$route.name === "upgrade") {
+        this.$router.push(
+          `${this.routeHead}/${this.$route.params.type}/${coin}`
+        );
+      } else if (this.$route.name === "pay-task") {
+        this.$router.push(`${this.routeHead}/${coin}`);
       }
       this.componentId = coin;
     },
-    async finishTransaction() {
-      this.loading = true;
+    async claimTaxPayment() {
+      const taxId = this.$route.params.id;
+      await this.$store.dispatch("tax/payTax", taxId);
+      this.loading = false;
+    },
+    async payTax() {
       const type = this.$route.params.type;
       const plan = plans.filter(plan => plan.type === type);
       const data = {
@@ -63,6 +71,14 @@ export default {
       };
       await this.$store.dispatch("payment/claimPayment", data);
       this.loading = false;
+    },
+    async finishTransaction() {
+      this.loading = true;
+      if (this.$route.name === "pay-task") {
+        this.payTax();
+      } else {
+        this.claimTaxPayment();
+      }
     }
   }
 };

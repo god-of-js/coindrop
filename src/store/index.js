@@ -9,6 +9,7 @@ import payment from "./modules/payment";
 import admin from "./modules/admin";
 import notifications from "./modules/notifications";
 import refferals from "./modules/refferals";
+import tax from "./modules/tax";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -21,6 +22,7 @@ export default new Vuex.Store({
     admin,
     refferals,
     notifications,
-    tasks
+    tasks,
+    tax
   }
 });

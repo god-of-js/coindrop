@@ -24,8 +24,8 @@ export default {
       component: () => import("@/views/dashboard/Referrals.vue")
     },
     {
-      path: "/payment/pay-tax/:id",
-      name: "pay-task",
+      path: "/payment/pay-tax/:id/:coin",
+      name: "pay-tax",
       component: () => import("@/views/dashboard/payment/Tax.vue")
     },
     {
@@ -89,6 +89,10 @@ export default {
       meta: {
         parentRoute: "/tasks"
       }
+    },
+    {
+      path: "/notifications",
+      component: () => import("@/views/dashboard/Notifications.vue")
     }
   ],
   beforeEnter(to, from, next) {

@@ -33,7 +33,6 @@ export default {
     api(rootState.user.user.JWT)
       .get(`/payment/get-withdrawal-requests/${rootState.user.user._id}`)
       .then(result => {
-        console.log(result.data.data);
         commit("setWithdrawalRequests", result.data.data);
       });
   },

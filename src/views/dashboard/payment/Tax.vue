@@ -11,6 +11,9 @@ export default {
   components: {
     Upgrade
   },
+  mounted() {
+    this.$store.dispatch("tax/getTax", { id: this.$route.params.id });
+  },
   computed: {
     getTaxId() {
       return this.$route.params.id;
