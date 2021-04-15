@@ -12,7 +12,7 @@ import Upgrade from "./Upgrade";
 export default {
   name: "Tax",
   components: {
-    Upgrade,
+    Upgrade
   },
   mounted() {
     this.$store.dispatch("tax/getTax", { id: this.$route.params.id });
@@ -20,8 +20,8 @@ export default {
   computed: {
     getTaxId() {
       return this.$route.params.id;
-    },
-  },
+    }
+  }
 };
 </script>
 

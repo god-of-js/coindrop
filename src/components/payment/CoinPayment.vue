@@ -13,10 +13,15 @@
           class="col-8 mr-3"
           id="copy-item"
         />
-        <custom-button  @click="initiateCopy">Copy wallet Address</custom-button>
+        <custom-button @click="initiateCopy">Copy wallet Address</custom-button>
       </div>
     </div>
-    <small> Please ensure that you send only <b>{{ `${coinWallet.fullName}(${coinWallet.name})` }}</b> to this wallet address as sending of other coins may result to irreversible loss of coin.</small>
+    <small>
+      Please ensure that you send only
+      <b>{{ `${coinWallet.fullName}(${coinWallet.name})` }}</b> to this wallet
+      address as sending of other coins may result to irreversible loss of
+      coin.</small
+    >
   </div>
 </template>
 
@@ -27,15 +32,15 @@ export default {
   props: {
     presentCoin: {
       type: String,
-      default: "BTC",
-    },
+      default: "BTC"
+    }
   },
   mixins: [copyToClipboard],
   computed: {
     coinWallet() {
-      return wallets.find((e) => this.presentCoin === e.name);
-    },
-  },
+      return wallets.find(e => this.presentCoin === e.name);
+    }
+  }
 };
 </script>
 

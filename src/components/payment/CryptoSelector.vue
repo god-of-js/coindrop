@@ -15,17 +15,17 @@ export default {
   props: {
     coins: {
       type: Array,
-      default: () => ["BTC", "ETH", "XRP", "SafeMoon", "BNB"],
-    },
+      default: () => ["BTC", "ETH", "XRP", "SafeMoon", "BNB"]
+    }
   },
   data: () => ({
-    coin: "BTC",
+    coin: "BTC"
   }),
   watch: {
     coin() {
       this.$emit("selectedcoin", this.coin);
-    },
-  },
+    }
+  }
 };
 </script>
 

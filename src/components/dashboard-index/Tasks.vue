@@ -23,8 +23,8 @@ export default {
   computed: {
     tasks() {
       return this.$store.state.tasks.tasks;
-    },
-  },
+    }
+  }
 };
 </script>
 

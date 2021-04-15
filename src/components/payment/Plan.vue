@@ -4,7 +4,7 @@
     <div class="price">&#36; {{ plan.price }}</div>
     <ul>
       <li
-        v-for="(advantage, index) in advantages"
+        v-for="(advantage, index) in plan.advantages"
         :key="index"
         class="pt-3 d-flex align-center"
       >
