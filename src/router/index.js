@@ -10,11 +10,6 @@ const routes = [
     path: "*",
     redirect: "/"
   },
-  {
-    path: "/about",
-    name: "About",
-    component: () => import("../views/About.vue")
-  },
   Home,
   Auth,
   Dashboard

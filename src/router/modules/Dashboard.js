@@ -35,7 +35,7 @@ export default {
       redirect: "/payment/withdraw",
       children: [
         {
-          path: "/payment/upgrade/:type/:coin",
+          path: "/payment/upgrade/:type",
           name: "Upgrade",
           component: () => import("@/views/dashboard/payment/Upgrade.vue"),
           meta: {

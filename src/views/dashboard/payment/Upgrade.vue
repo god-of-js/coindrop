@@ -29,12 +29,6 @@ import DepositTips from "@/components/payment/PaymentTips.vue";
 import CoinPayment from "@/components/payment/CoinPayment.vue";
 import { plans } from "@/helpers/plans.js";
 export default {
-  props: {
-    routeHead: {
-      type: String,
-      default: "/payment/upgrade"
-    }
-  },
   data: () => {
     return {
       componentId: "BTC",
@@ -48,14 +42,6 @@ export default {
   },
   methods: {
     changeCoin(coin) {
-      console.log(this.$route);
-      if (this.$route.name === "upgrade") {
-        this.$router.push(
-          `${this.routeHead}/${this.$route.params.type}/${coin}`
-        );
-      } else if (this.$route.name === "pay-task") {
-        this.$router.push(`${this.routeHead}/${coin}`);
-      }
       this.componentId = coin;
     },
     async claimTaxPayment() {
@@ -72,7 +58,7 @@ export default {
       const plan = plans.filter(plan => plan.type === type);
       const data = {
         upgradeType: type,
-        coin: this.$route.params.coin,
+        coin: this.componentId,
         amount: plan[0].price
       };
       await this.$store.dispatch("payment/claimPayment", data);

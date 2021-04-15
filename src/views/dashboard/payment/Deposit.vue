@@ -21,14 +21,16 @@
       </div>
       <div class="pb-3">
         <b>Date of Transaction: </b>
-        <span>{{ returnDate(claimedPayment.createdAt) }} </span>
+        <span>{{ returnDateAndTime(claimedPayment.createdAt) }} </span>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import dateFormatter from "@/mixins/dateFormatter.js";
 export default {
+  mixins: [dateFormatter],
   computed: {
     claimedPayment() {
       return this.$store.state.payment.claimedPayment;
@@ -38,12 +40,6 @@ export default {
     this.$store.dispatch("payment/getClaimedPayment", {
       id: this.$route.params.id
     });
-  },
-  methods: {
-    returnDate(date) {
-      const data = new Date(date);
-      return `${data.getDay()}/${data.getMonth()}/${data.getFullYear()}`;
-    }
   }
 };
 </script>
