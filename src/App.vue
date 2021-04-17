@@ -1,6 +1,7 @@
 <template>
-  <v-app>
+  <v-app class="red">
     <router-view />
+    <app-footer />
   </v-app>
 </template>
 
@@ -8,7 +9,9 @@
 export default {
   name: "App",
 
-  components: {},
+  components: {
+    AppFooter: () => import("./components/Layout/AppFooter")
+  },
 
   data: () => ({
     //

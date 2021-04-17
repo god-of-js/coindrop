@@ -1,9 +1,9 @@
 <template>
   <nav id="topNav" class="d-flex align-center justify-space-between" ref="nav">
-    <span class="nav-name" v-text="appName" />
+    <router-link to="/"> <span class="nav-name" v-text="appName"/></router-link>
     <ul class="pa-0 ma-0 d-flex align-center" v-if="!smallDevices">
       <li><router-link to="/about" class="route-link">About</router-link></li>
-      <li><router-link to="/about" class="route-link">FAQ's</router-link></li>
+      <li><router-link to="/faqs" class="route-link">FAQ's</router-link></li>
       <li>
         <router-link to="/about" class="route-link">Contact Us</router-link>
       </li>
@@ -13,8 +13,7 @@
         >
       </li>
     </ul>
-
-    <button v-if="smallDevices">
+    <button v-else>
       <v-icon class="icon">mdi-menu</v-icon>
     </button>
   </nav>
@@ -44,10 +43,13 @@ export default {
 @import "../../assets/styles/colors.scss";
 @import "../../assets/styles/mixins.scss";
 #topNav {
-  background-color: $primary-dark-color;
+  background-color: transparent;
   padding: 15px;
   padding-left: 5%;
   text-align: left;
+  position: fixed;
+  left: 0%;
+  right: 0;
   z-index: 99;
   .nav-name {
     color: $gold-text;
@@ -61,7 +63,7 @@ export default {
       margin: 0px 15px;
     }
     .route-link {
-      font-size: 1.1em;
+      font-size: 1em;
     }
   }
   .icon {

@@ -45,7 +45,7 @@ export default {
 }
 .intro {
   background: $primary-dark-color;
-  min-height: 60vh;
+  min-height: 70vh;
   h1 {
     color: $primary-white;
     font-size: 2.5em;

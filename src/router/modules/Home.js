@@ -13,6 +13,11 @@ export default {
       path: "/about",
       name: "About",
       component: () => import("@/views/home/About.vue")
+    },
+    {
+      path: "/faqs",
+      name: "FAQs",
+      component: () => import("@/views/home/FAQs.vue")
     }
   ]
 };

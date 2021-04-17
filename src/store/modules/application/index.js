@@ -2,9 +2,10 @@ import api from "../../../plugins/api";
 export default {
   namespaced: true,
   state: {
-    appName: "Crypto",
+    appName: "CoinDrop",
     apiUrl: "http://localhost:4000",
-    cryptoMarket: []
+    cryptoMarket: [],
+    baseUrl: "Coindrop.com"
   },
   mutations: {
     setCryptoMarket(state, param) {
