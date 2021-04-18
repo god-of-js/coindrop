@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <footer>
     <ul>
       <li
         v-for="(route, index) in routes"
@@ -16,7 +16,7 @@
         <v-icon class="icon" color="#707A8A">mdi-power</v-icon>
       </li>
     </ul>
-  </nav>
+  </footer>
 </template>
 
 <script>
