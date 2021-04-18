@@ -34,7 +34,6 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  width: 80%;
   margin: auto;
   margin-top: 0px;
 }

@@ -56,7 +56,7 @@ export default {
   mixins: [copyMixin],
   data: () => {
     return {
-      support: "support@coindrop.com",
+      support: "support@coindrop.com"
     };
   },
   computed: {
@@ -65,14 +65,14 @@ export default {
     },
     baseUrl() {
       return this.$store.state.app.baseUrl;
-    },
+    }
   },
   methods: {
     checkYear() {
       const date = new Date();
       return date.getFullYear();
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -102,10 +102,10 @@ footer {
       outline: none;
     }
   }
-    b {
-      color: $gold-text;
-      font-size: 1em;
-    }
+  b {
+    color: $gold-text;
+    font-size: 1em;
+  }
   ul {
     padding: 0px;
     margin: 0px;

@@ -2,9 +2,12 @@
   <main>
     <top-nav />
     <div class="d-flex dashboard-content">
-      <side-nav />
-      <router-view />
+      <side-nav v-if="!smallScreen" />
+      <div :class="!smallScreen ? 'half-width mx-auto' : ''">
+        <router-view />
+      </div>
     </div>
+    <foot-nav v-if="smallScreen" />
     <modal v-if="modalIsActive" />
   </main>
 </template>
@@ -13,6 +16,8 @@
 export default {
   components: {
     TopNav: () => import("@/components/dashboard-layout-components/TopNav.vue"),
+    FootNav: () =>
+      import("@/components/dashboard-layout-components/FootNav.vue"),
     SideNav: () =>
       import("@/components/dashboard-layout-components/SideNav.vue"),
     modal: () => import("@/components/global-modal/Modal.vue")
@@ -20,6 +25,9 @@ export default {
   computed: {
     modalIsActive() {
       return this.$store.state.modal.modalIsActive;
+    },
+    smallScreen() {
+      return this.$vuetify.breakpoint.xs;
     }
   }
 };
@@ -29,5 +37,8 @@ export default {
 @import "../assets/styles/colors.scss";
 .dashboard-content {
   background: $secondary-background;
+  .half-width {
+    width: 80%;
+  }
 }
 </style>

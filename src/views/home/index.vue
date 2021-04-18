@@ -10,21 +10,8 @@
     <section class="cryptorates pb-7">
       <crypto-rates></crypto-rates>
     </section>
-    <section>
+    <section class="pb-4">
       <get-in-touch />
-    </section>
-    <section
-      class="actions mt-6 d-flex justify-center align-center flex-column"
-    >
-      <h1 class="mining-section">Choose Mining Option</h1>
-      <div class="d-flex">
-        <custom-button class="ma-4 mr-2 pl-4 pr-4"
-          >Mine Crypto Now</custom-button
-        >
-        <custom-button class="ma-4 ml-2 pl-4 pr-4"
-          >Increase Hash Rate</custom-button
-        >
-      </div>
     </section>
   </main>
 </template>
