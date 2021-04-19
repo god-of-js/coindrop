@@ -1,6 +1,6 @@
 <template>
   <div class="tasks">
-    <header class="pa-3">
+    <header class="ml-6 mr-6 pa-2 mt-4">
       <h1>Tasks</h1>
     </header>
     <ul class="tasks-container ma-6 pl-0">

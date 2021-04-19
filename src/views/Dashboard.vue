@@ -3,7 +3,7 @@
     <top-nav />
     <div class="d-flex dashboard-content">
       <side-nav v-if="!smallScreen" />
-      <div :class="!smallScreen ? 'half-width mx-auto' : ''">
+      <div :class="!smallScreen ? 'half-width mx-auto' : 'mx-auto full-width'">
         <router-view />
       </div>
     </div>
@@ -27,7 +27,7 @@ export default {
       return this.$store.state.modal.modalIsActive;
     },
     smallScreen() {
-      return this.$vuetify.breakpoint.xs;
+      return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs;
     }
   }
 };
@@ -39,6 +39,9 @@ export default {
   background: $secondary-background;
   .half-width {
     width: 80%;
+  }
+  .full-width {
+    width: 100%;
   }
 }
 </style>

@@ -7,8 +7,10 @@
     </p>
     <v-row class="pt-8 d-flex justify-center">
       <v-col
-        sm="12"
-        md="3"
+        sm="6"
+        xs="12"
+        md="4"
+        cols="12"
         class="ma-1"
         lg="3"
         v-for="(plan, index) in plans"

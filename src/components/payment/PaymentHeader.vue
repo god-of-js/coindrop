@@ -1,5 +1,5 @@
 <template>
-  <div class="payment-header pa-5 pb-0">
+  <div class="payment-header pa-5 pb-0 mt-4">
     <h4>Payments</h4>
     <div class="d-flex pt-4">
       <button-navigators :routeArr="routeArr" />
