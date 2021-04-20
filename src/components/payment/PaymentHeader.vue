@@ -23,7 +23,7 @@ export default {
         },
         {
           url: "/payment/plans",
-          name: "Upgrade to increase Hash Rate"
+          name: "Upgrade Account"
         }
       ]
     };

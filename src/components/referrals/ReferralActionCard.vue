@@ -1,7 +1,7 @@
 <template>
   <v-row class="referral-action-card pa-5 d-flex align-center">
     <v-col sm="12" lg="8" md="6" class="d-flex align-center">
-      <v-avatar class="avatar mr-5">
+      <v-avatar class="avatar mr-5" v-if="!smallScreen">
         <v-icon>mdi-account-multiple-plus-outline</v-icon>
       </v-avatar>
       <div class="refer-text">
@@ -49,6 +49,9 @@ export default {
     },
     referralId() {
       return this.$store.state.user.user.email;
+    },
+    smallScreen() {
+      return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs;
     }
   },
   methods: {

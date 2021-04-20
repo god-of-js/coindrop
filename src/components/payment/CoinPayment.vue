@@ -6,14 +6,17 @@
     <div class="copy-field mt-5">
       <span>Wallet Address</span>
       <div class="row mt-1 d-flex align-center mb-3">
-        <input
-          type="text"
-          v-model="coinWallet.wallet"
-          disabled
-          class="col-8 mr-3"
-          id="copy-item"
-        />
-        <custom-button @click="initiateCopy">Copy wallet Address</custom-button>
+        <v-col cols="12" sm="12" md="7" lg="12" xs="12" class="pa-0 mr-3">
+          <input
+            type="text"
+            v-model="coinWallet.wallet"
+            disabled
+            class="mt-3"
+            id="copy-item"
+        /></v-col>
+        <custom-button @click="initiateCopy" class="mt-3"
+          >Copy wallet Address</custom-button
+        >
       </div>
     </div>
     <small>
@@ -32,15 +35,15 @@ export default {
   props: {
     presentCoin: {
       type: String,
-      default: "BTC"
-    }
+      default: "BTC",
+    },
   },
   mixins: [copyToClipboard],
   computed: {
     coinWallet() {
-      return wallets.find(e => this.presentCoin === e.name);
-    }
-  }
+      return wallets.find((e) => this.presentCoin === e.name);
+    },
+  },
 };
 </script>
 
@@ -57,7 +60,7 @@ export default {
   input {
     height: 38px;
     width: fit-content;
-    min-width: 130px;
+    width: 100%;
     padding-left: 6px;
     background: $primary-white;
     border-radius: 5px;
