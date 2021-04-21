@@ -33,7 +33,7 @@
             <router-link to="/about" id="link">About</router-link>
           </li>
           <li>
-            <router-link to="/faqs" id="link">FAQ's</router-link>
+            <!-- <router-link to="/faqs" id="link">FAQ's</router-link> -->
           </li>
         </ul>
       </v-col>

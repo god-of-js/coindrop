@@ -3,7 +3,7 @@
     <router-link to="/"> <span class="nav-name" v-text="appName"/></router-link>
     <ul class="pa-0 ma-0 d-flex align-center" v-if="!smallDevices">
       <li><router-link to="/about" class="route-link">About</router-link></li>
-      <li><router-link to="/faqs" class="route-link">FAQ's</router-link></li>
+      <!-- <li><router-link to="/faqs" class="route-link">FAQ's</router-link></li> -->
       <li>
         <router-link to="/contact" class="route-link">Contact Us</router-link>
       </li>
