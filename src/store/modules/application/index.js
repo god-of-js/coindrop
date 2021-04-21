@@ -5,7 +5,7 @@ export default {
     appName: "CoinDrop",
     apiUrl: "http://localhost:4000",
     cryptoMarket: [],
-    baseUrl: "Coindrop.com"
+    baseUrl: "oindrop.live"
   },
   mutations: {
     setCryptoMarket(state, param) {
@@ -14,10 +14,12 @@ export default {
   },
   actions: {
     async getCryptoMarket({ commit }) {
-      api.get("/application/crypto-market").then(request => {
-        console.log(request.data.data);
-        commit("setCryptoMarket", request.data.data);
-      });
+      api()
+        .get("/application/crypto-market")
+        .then(request => {
+          console.log(request.data.data);
+          commit("setCryptoMarket", request.data.data);
+        });
     }
   }
 };

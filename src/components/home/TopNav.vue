@@ -5,7 +5,7 @@
       <li><router-link to="/about" class="route-link">About</router-link></li>
       <li><router-link to="/faqs" class="route-link">FAQ's</router-link></li>
       <li>
-        <router-link to="/about" class="route-link">Contact Us</router-link>
+        <router-link to="/contact" class="route-link">Contact Us</router-link>
       </li>
       <li>
         <router-link to="/dashboard"

@@ -16,14 +16,8 @@
             class="pb-5 pt-5"
             id="table-row"
           >
-            <td class="d-flex align-center ">
-              <v-avatar class="mr-4">
-                <img
-                  src="https://cdn.vuetifyjs.com/images/john.jpg"
-                  alt="John"
-                />
-              </v-avatar>
-              <span>{{ market.name }} </span>
+            <td class="">
+              {{ market.name }}
             </td>
             <td>&#36;{{ market.quote.USD.price.toFixed(2) }}</td>
             <td>{{ market.symbol }}</td>

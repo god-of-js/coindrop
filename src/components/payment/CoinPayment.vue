@@ -35,15 +35,15 @@ export default {
   props: {
     presentCoin: {
       type: String,
-      default: "BTC",
-    },
+      default: "BTC"
+    }
   },
   mixins: [copyToClipboard],
   computed: {
     coinWallet() {
-      return wallets.find((e) => this.presentCoin === e.name);
-    },
-  },
+      return wallets.find(e => this.presentCoin === e.name);
+    }
+  }
 };
 </script>
 

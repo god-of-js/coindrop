@@ -61,7 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/styles/colors.scss";
-footer{
+footer {
   position: fixed;
   bottom: 0;
   left: 0;
