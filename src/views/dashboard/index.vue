@@ -2,10 +2,11 @@
   <main class="pa-3">
     <welcome-card />
     <v-row class="row pt-5">
-      <v-col sm="12" md="7" lg="8"
-        ><portfolio /> <notification-card></notification-card
-      ></v-col>
-      <v-col sm="12" md="5" lg="4">
+      <v-col cols="12" sm="12" xs="12" md="7" lg="8">
+        <portfolio />
+        <notification-card />
+      </v-col>
+      <v-col cols="12" sm="12" xs="12" md="5" lg="4">
         <refer-card class="mb-4" />
         <tasks />
       </v-col>

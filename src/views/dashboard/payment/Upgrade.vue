@@ -1,11 +1,11 @@
 <template>
   <div class="deposit pa-5">
     <v-row class="d-flex justify-space-between">
-      <v-col sm="12" lg="5" md="5">
+      <v-col sm="6" xs="12" lg="5" md="5" cols="12">
         <v-col lg="10"> <crypto-selector @selectedcoin="changeCoin"/></v-col>
         <deposit-tips />
       </v-col>
-      <v-col sm="12" lg="6" md="6">
+      <v-col sm="6" xs="12" lg="6" md="6" cols="12">
         <coin-payment :presentCoin="componentId" />
         <custom-button
           class="mt-4"

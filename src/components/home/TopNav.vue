@@ -13,7 +13,7 @@
         >
       </li>
     </ul>
-    <button v-else>
+    <button v-else @click="openSideBar">
       <v-icon class="icon">mdi-menu</v-icon>
     </button>
   </nav>
@@ -35,6 +35,11 @@ export default {
         ? this.$refs.nav.classList.add("fixednav")
         : this.$refs.nav.classList.remove("fixednav");
     };
+  },
+  methods: {
+    openSideBar() {
+      this.$store.commit("app/sideBarStatus", true);
+    }
   }
 };
 </script>

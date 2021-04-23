@@ -1,3 +1,4 @@
+import store from "@/store";
 export default {
   path: "/authentication",
   name: "Authentication",
@@ -14,5 +15,12 @@ export default {
       name: "Login",
       component: () => import("../../views/authentication/Login.vue")
     }
-  ]
+  ],
+  beforeEnter(to, from, next) {
+    if (store.state.user.user.JWT) {
+      next("/dashboard");
+    } else {
+      next();
+    }
+  }
 };

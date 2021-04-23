@@ -25,20 +25,21 @@ export default {
   data() {
     return {
       loading: false
-    }
+    };
   },
   computed: {
     baseUrl() {
       return this.$store.state.app.baseUrl.toLowerCase();
-    }},
-    methods: {
-      sendMessage() {
-        this.$notification.success({
+    }
+  },
+  methods: {
+    sendMessage() {
+      this.$notification.success({
         message: "Success",
         description: "Support would reach out to you as soon as possible"
       });
-      }
     }
+  }
 };
 </script>
 

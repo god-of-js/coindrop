@@ -1,6 +1,6 @@
 <template>
   <v-row class="referral-action-card pa-5 d-flex align-center">
-    <v-col sm="12" lg="8" md="6" class="d-flex align-center">
+    <v-col sm="12" lg="8" md="6" cols="12" class="d-flex align-center">
       <v-avatar class="avatar mr-5" v-if="!smallScreen">
         <v-icon>mdi-account-multiple-plus-outline</v-icon>
       </v-avatar>
@@ -16,7 +16,7 @@
         <p>Send your email to your referral to be used on Registration</p>
       </div></v-col
     >
-    <v-col sm="12" lg="4" class="pa-0" md="6">
+    <v-col sm="12" lg="4" cols="12" class="pa-0" md="6">
       <div class="d-flex align-center justify-end">
         <input
           type="text"

@@ -13,13 +13,13 @@
       >
     </div>
     <v-row class="">
-      <v-col sm="12" md="4" cols="12">
+      <v-col sm="4" xs="12" md="4" cols="12">
         <portfolio-card :value="userData.balance" :name="'Balance'" />
       </v-col>
-      <v-col sm="12" md="4" cols="12">
+      <v-col sm="4" xs="12" md="4" cols="12">
         <portfolio-card :value="userData.hashRate" :name="'Hash Rate'" />
       </v-col>
-      <v-col sm="12" md="4" cols="12">
+      <v-col sm="4" xs="12" md="4" cols="12">
         <portfolio-card
           :value="userData.noOfRefferals"
           :name="'No of Referrals'"

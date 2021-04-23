@@ -5,11 +5,15 @@ export default {
     appName: "CoinDrop",
     apiUrl: "http://localhost:4000",
     cryptoMarket: [],
-    baseUrl: "oindrop.live"
+    baseUrl: "coindrop.live",
+    sidebar: false
   },
   mutations: {
     setCryptoMarket(state, param) {
       state.cryptoMarket = param;
+    },
+    sideBarStatus(state, param) {
+      state.sidebar = param;
     }
   },
   actions: {

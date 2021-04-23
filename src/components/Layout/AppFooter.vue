@@ -56,7 +56,7 @@ export default {
   mixins: [copyMixin],
   data: () => {
     return {
-      support: "support@coindrop.com"
+      support: "support@coindrop.live"
     };
   },
   computed: {
