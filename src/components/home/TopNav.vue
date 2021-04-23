@@ -1,7 +1,7 @@
 <template>
   <nav id="topNav" class="d-flex align-center justify-space-between" ref="nav">
     <router-link to="/">
-      <logo class="logo"/>
+      <logo class="logo" />
     </router-link>
 
     <ul class="pa-0 ma-0 d-flex align-center" v-if="!smallDevices">
@@ -31,10 +31,10 @@ export default {
     },
     smallDevices() {
       return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs;
-    },
+    }
   },
   components: {
-    Logo,
+    Logo
   },
   mounted() {
     window.onscroll = () => {
@@ -46,8 +46,8 @@ export default {
   methods: {
     openSideBar() {
       this.$store.commit("app/sideBarStatus", true);
-    },
-  },
+    }
+  }
 };
 </script>
 

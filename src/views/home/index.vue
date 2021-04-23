@@ -32,13 +32,13 @@
 export default {
   components: {
     CryptoRates: () => import("@/components/home/CryptoRates.vue"),
-    GetInTouch: () => import("@/components/home/GetInTouch.vue"),
+    GetInTouch: () => import("@/components/home/GetInTouch.vue")
   },
   computed: {
     appName() {
       return this.$store.state.app.appName;
-    },
-  },
+    }
+  }
 };
 </script>
 
