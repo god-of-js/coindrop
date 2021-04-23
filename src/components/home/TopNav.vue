@@ -1,6 +1,9 @@
 <template>
   <nav id="topNav" class="d-flex align-center justify-space-between" ref="nav">
-    <router-link to="/"> <span class="nav-name" v-text="appName"/></router-link>
+    <router-link to="/">
+      <logo class="logo"/>
+    </router-link>
+
     <ul class="pa-0 ma-0 d-flex align-center" v-if="!smallDevices">
       <li><router-link to="/about" class="route-link">About</router-link></li>
       <!-- <li><router-link to="/faqs" class="route-link">FAQ's</router-link></li> -->
@@ -20,6 +23,7 @@
 </template>
 
 <script>
+import Logo from "../images/Logo";
 export default {
   computed: {
     appName() {
@@ -27,7 +31,10 @@ export default {
     },
     smallDevices() {
       return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs;
-    }
+    },
+  },
+  components: {
+    Logo,
   },
   mounted() {
     window.onscroll = () => {
@@ -39,8 +46,8 @@ export default {
   methods: {
     openSideBar() {
       this.$store.commit("app/sideBarStatus", true);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -84,7 +91,11 @@ export default {
   transition: all 0.5s ease-in-out;
   height: 80px;
   @include box-shadow();
-  color: #000000 !important;
+  ::v-deep {
+    .turn-black {
+      fill: #000000 !important;
+    }
+  }
 }
 ::v-deep {
   #btn {

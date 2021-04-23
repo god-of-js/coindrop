@@ -1,11 +1,23 @@
 <template>
   <main class="home">
     <section class="intro d-flex justify-center flex-column align-center">
-      <h1 class="text-center">Mine crypto currencies</h1>
-      <span class="">Join one of the world's best crypto mining sites.</span>
-      <router-link to="/register">
-        <custom-button class="pa-6">Register Now</custom-button></router-link
+      <img
+        src="@/assets/images/safemoon-logo.gif"
+        alt="safemoon logo"
+        width="150"
+      />
+      <h1 class="text-center">Mine the safemoon crypto currency</h1>
+      <span class="subtitle text-center"
+        >Join the first safemoon crypto mining site.</span
       >
+      <p class="col-lg-4 col-md-4 text-center">
+        With over 85,000 users currently minning on <b>{{ appName }}</b
+        >. And with over 20,000 daily active minning users.
+      </p>
+      <router-link to="/register">
+        <custom-button class="pa-6"
+          ><span>Start Mining</span> <v-icon></v-icon> </custom-button
+      ></router-link>
     </section>
     <section class="cryptorates pb-7">
       <crypto-rates></crypto-rates>
@@ -20,8 +32,13 @@
 export default {
   components: {
     CryptoRates: () => import("@/components/home/CryptoRates.vue"),
-    GetInTouch: () => import("@/components/home/GetInTouch.vue")
-  }
+    GetInTouch: () => import("@/components/home/GetInTouch.vue"),
+  },
+  computed: {
+    appName() {
+      return this.$store.state.app.appName;
+    },
+  },
 };
 </script>
 
@@ -32,17 +49,20 @@ export default {
 }
 .intro {
   background: $primary-dark-color;
-  min-height: 70vh;
+  min-height: 100vh;
   h1 {
     color: $primary-white;
     font-size: 2.5em;
     margin-bottom: 0px;
   }
-  span {
+  .subtitle {
     font-size: 1.5em;
     font-weight: bold;
     color: $text-grey;
-    margin-bottom: 15px;
+  }
+  p {
+    color: $text-grey;
+    font-size: 1em;
   }
 }
 .actions {
