@@ -7,18 +7,18 @@
       </button>
     </div>
     <ul class="pt-4">
-      <li>
+      <li @click="closeModal">
         <router-link to="/about" class="route-link pa-2">About</router-link>
       </li>
-      <li>
+      <li @click="closeModal">
         <router-link to="/faqs" class="route-link pa-2">FAQ's</router-link>
       </li>
-      <li>
+      <li @click="closeModal">
         <router-link to="/contact" class="route-link pa-2"
           >Contact Us</router-link
         >
       </li>
-      <li>
+      <li @click="closeModal">
         <router-link to="/dashboard" class="route-link pa-2"
           >Mine Crypto</router-link
         >
