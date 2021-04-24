@@ -1,17 +1,21 @@
 <template>
   <nav id="nav" class="">
     <router-link to="/">
-      <span class="nav-name" v-text="appName" />
+      <logo class="logo" />
     </router-link>
   </nav>
 </template>
 
 <script>
+import Logo from "../images/Logo";
 export default {
   computed: {
     appName() {
       return this.$store.state.app.appName;
     }
+  },
+  components: {
+    Logo
   }
 };
 </script>
@@ -20,14 +24,11 @@ export default {
 @import "../../assets/styles/colors.scss";
 #nav {
   background: $primary-dark-color;
-  padding: 15px;
-  padding-left: 5%;
+  padding: 4px;
+  padding-left: 3%;
   text-align: left;
-  .nav-name {
-    color: $gold-text;
-    font-weight: 900;
-    font-size: 1.3em;
-    text-transform: uppercase;
+  .logo {
+    width: 170px;
   }
 }
 </style>

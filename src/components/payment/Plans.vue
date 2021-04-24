@@ -1,10 +1,6 @@
 <template>
   <div class="pa-5 plans">
-    <h1 class="text-center">Plans</h1>
-    <p class="text-center">
-      Plans help us serve you better by pinpointing the exact service you need.
-      and also helps keep us running
-    </p>
+    <h1 class="text-center">Select Plan</h1>
     <v-row class="pt-8 d-flex justify-center">
       <v-col
         sm="6"

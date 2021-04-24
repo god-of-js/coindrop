@@ -3,7 +3,7 @@
     <div class="d-flex justify-end" v-if="showActions">
       <router-link to="/payment/plans">
         <custom-button class="deposit-button ma-2"
-          >Increase Hash Rate</custom-button
+          >Increase Hash Rate to start mining</custom-button
         ></router-link
       >
       <router-link to="/payment/withdraw">

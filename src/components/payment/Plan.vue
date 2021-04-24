@@ -12,7 +12,7 @@
         <span>{{ advantage }}</span>
       </li>
     </ul>
-    <custom-button class="mt-8" @click="upgrade">Upgrade Plan</custom-button>
+    <custom-button class="mt-8" @click="upgrade">Choose Plan</custom-button>
   </div>
 </template>
 

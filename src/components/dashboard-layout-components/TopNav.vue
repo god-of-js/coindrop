@@ -1,15 +1,19 @@
 <template>
   <nav class="d-flex align-center justify-space-between">
-    <span v-text="appName" class="app-name" />
+    <logo class="logo" />
   </nav>
 </template>
 
 <script>
+import Logo from "../images/Logo";
 export default {
   computed: {
     appName() {
       return this.$store.state.app.appName;
     }
+  },
+  components: {
+    Logo
   },
   mounted() {
     this.$store.dispatch("notifications/subscribeToPubNub");
@@ -22,14 +26,10 @@ export default {
 @import "../../assets/styles/colors.scss";
 nav {
   background: $primary-dark-color;
-  padding: 15px;
-  padding-left: 5%;
+  padding: 5px;
   text-align: left;
-  .app-name {
-    color: $gold-text;
-    font-weight: 900;
-    font-size: 1.3em;
-    text-transform: uppercase;
+  .logo {
+    width: 170px;
   }
 }
 </style>

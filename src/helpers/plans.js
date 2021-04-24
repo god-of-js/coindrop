@@ -8,7 +8,7 @@ export const plans = [
       "hashrate worth 10.7$ safemoon Token",
       "Plan duration of 7 days",
       "ROI of 50%",
-      "Minimum withdrawal of 75 dollars worth of safemoon"
+      "Minimum withdrawal of $75 worth of safemoon"
     ]
   },
   {
@@ -50,10 +50,10 @@ export const plans = [
     type: "retirement",
     advantages: [
       "Hash Rate of $5,000 dollars worth of Safemoon",
-      "Unlimited(200% after 14 days)",
+      "Unlimited duration(200% after 14 days)",
       "Plan duration of 1 day",
       "Asset Protection",
-      "Minimum withdrawal of 70,000"
+      "Minimum withdrawal of $150,000 worth of safemoon"
     ]
   }
 ];
