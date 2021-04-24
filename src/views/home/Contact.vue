@@ -24,34 +24,39 @@ export default {
   name: "Contact",
   data() {
     return {
-      loading: false
+      loading: false,
     };
   },
   computed: {
     baseUrl() {
       return this.$store.state.app.baseUrl.toLowerCase();
-    }
+    },
   },
   methods: {
     sendMessage() {
       this.$notification.success({
         message: "Success",
-        description: "Support would reach out to you as soon as possible"
+        description: "Support would reach out to you as soon as possible",
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/styles/colors.scss";
 @import "@/assets/styles/mixins.scss";
+@import "@/assets/styles/sizes.scss";
 .contact {
   background: $secondary-background;
   color: $primary-font-color;
   min-height: 100vh;
   height: 100%;
   padding-top: 7%;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
   h1 {
     color: $gold-text;
     font-weight: bold;
@@ -76,6 +81,17 @@ export default {
   }
   label {
     font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: $tablet-small-width) {
+  form {
+    width: 45% !important;
+  }
+}
+@media screen and (max-width: $mobile) {
+  form {
+    width: 80% !important;
   }
 }
 </style>
