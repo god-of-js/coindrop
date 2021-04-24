@@ -31,7 +31,7 @@ export default {
       steps: [
         {
           header: "Create an account",
-          text: "After signing up, you would get full access to your dashboard."
+          text: "After signing up or signing in, you would get full access to your dashboard. Here you would get the details of your transactions, notifications, refferals e.t.c."
         },
         {
           header: "Choose a plan",
@@ -42,6 +42,11 @@ export default {
           header: "Rest, and let us take care of the rest.",
           text:
             "After selecting your plan and making full payment, our system is designed to help you mine on the server without having to keep tabs open and taking up memory on your system. "
+        },
+        {
+          header: "Withdrawal",
+          text:
+            "After your minimum withdrawable amount is reached, navigate to payment through the sidebar or click the withdraw button where you would withdraw your balance in the safemoon crypto currency to your safemoon wallet."
         }
       ]
     };
