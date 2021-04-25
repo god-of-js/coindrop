@@ -20,24 +20,6 @@
 
 <script>
 export default {
-  data: () => {
-    return {
-      tasksDemo: [
-        {
-          header: "Update your profile avatar"
-        },
-        {
-          header: "Update your safemoon wallet address on your profile"
-        },
-        {
-          header: "Upgrade to premium to enjoy more gains."
-        },
-        {
-          header: "Withdraw balance from your wallet."
-        }
-      ]
-    };
-  },
   computed: {
     tasks() {
       return this.$store.state.tasks.tasks;
