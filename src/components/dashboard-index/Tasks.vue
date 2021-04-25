@@ -12,14 +12,16 @@
     <ul class="tasks ma-0 pa-0">
       <li v-for="(task, index) in tasks" class="task pa-4" :key="index">
         <p class="ma-0">{{ task.header }}</p>
-        <div class="date pb-3"></div>
+        <div class="date pb-3">{{ returnDateAndTime(task.createdAt) }}</div>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import dateFormatter from "@/mixins/dateFormatter.js";
 export default {
+  mixins: [dateFormatter],
   computed: {
     tasks() {
       return this.$store.state.tasks.tasks;
