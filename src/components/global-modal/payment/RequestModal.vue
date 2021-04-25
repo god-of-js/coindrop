@@ -11,7 +11,7 @@
         :label="'Amount to withdraw(current balance)'"
         :inputType="'number'"
         :disabled="true"
-        :placeholder="`${userBalance}`"
+        :placeholder="`$${userBalance.toLocaleString()}`"
         @data="e => (data.amount = e)"
       />
       <custom-input
