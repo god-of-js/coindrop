@@ -26,8 +26,6 @@ export default {
       import("@/components/dashboard-index/NotificationCard.vue")
   },
   mounted() {
-    this.$store.dispatch("notifications/getNotifications");
-    this.$store.dispatch("tasks/getTasks");
   },
   methods: {}
 };

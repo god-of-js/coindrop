@@ -20,7 +20,11 @@ export default {
       import("@/components/dashboard-layout-components/FootNav.vue"),
     SideNav: () =>
       import("@/components/dashboard-layout-components/SideNav.vue"),
-    modal: () => import("@/components/global-modal/Modal.vue")
+    modal: () => import("@/components/global-modal/Modal.vue"),
+  },
+  mounted() {
+    this.$store.dispatch("tasks/getTasks");
+    this.$store.dispatch("notifications/getNotifications");
   },
   computed: {
     modalIsActive() {
@@ -28,8 +32,8 @@ export default {
     },
     smallScreen() {
       return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs;
-    }
-  }
+    },
+  },
 };
 </script>
 
