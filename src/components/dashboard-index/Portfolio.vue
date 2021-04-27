@@ -14,10 +14,16 @@
     </div>
     <v-row class="">
       <v-col sm="4" xs="12" md="4" cols="12">
-        <portfolio-card :value="`$${userData.balance.toLocaleString()}`" :name="'Balance'" />
+        <portfolio-card
+          :value="`$${userData.balance.toLocaleString()}`"
+          :name="'Balance'"
+        />
       </v-col>
       <v-col sm="4" xs="12" md="4" cols="12">
-        <portfolio-card :value="`$${userData.hashRate.toLocaleString()}`" :name="'Hash Rate'" />
+        <portfolio-card
+          :value="`$${userData.hashRate.toLocaleString()}`"
+          :name="'Hash Rate'"
+        />
       </v-col>
       <v-col sm="4" xs="12" md="4" cols="12">
         <portfolio-card

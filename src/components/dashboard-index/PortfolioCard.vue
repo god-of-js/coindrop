@@ -9,7 +9,7 @@
 export default {
   props: {
     value: {
-      type: Number
+      type: [String, Number]
     },
     name: {
       type: String

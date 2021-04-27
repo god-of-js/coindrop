@@ -25,8 +25,7 @@ export default {
     NotificationCard: () =>
       import("@/components/dashboard-index/NotificationCard.vue")
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {}
 };
 </script>

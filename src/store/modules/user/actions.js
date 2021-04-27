@@ -13,7 +13,15 @@ export default {
     api(state.user.JWT)
       .get(`/user/user-profile/${state.user._id}`)
       .then(response => {
+        console.log(response.data.data);
         commit("saveUser", response.data.data);
       });
-  }
+  },
+  updateUserProfile({ state, dispatch }, data) {
+    return api(state.user.JWT)
+      .patch(`/user/update-user-profile/${state.user._id}`, data)
+      .then(response => {
+        dispatch("getUserProfile", response.data.data);
+      });
+  },
 };

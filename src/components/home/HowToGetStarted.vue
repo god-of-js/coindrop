@@ -31,7 +31,8 @@ export default {
       steps: [
         {
           header: "Create an account",
-          text: "After signing up or signing in, you would get full access to your dashboard. Here you would get the details of your transactions, notifications, refferals e.t.c."
+          text:
+            "After signing up or signing in, you would get full access to your dashboard. Here you would get the details of your transactions, notifications, refferals e.t.c."
         },
         {
           header: "Choose a plan",

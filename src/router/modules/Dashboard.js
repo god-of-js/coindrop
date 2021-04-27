@@ -93,6 +93,10 @@ export default {
     {
       path: "/notifications",
       component: () => import("@/views/dashboard/Notifications.vue")
+    },
+    {
+      path: "/profile-settings",
+      component: () => import("@/views/dashboard/Settings.vue")
     }
   ],
   beforeEnter(to, from, next) {

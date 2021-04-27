@@ -1,6 +1,6 @@
 <template>
   <div class="text-left">
-    <label for="" v-if="label">{{ label }}</label>
+    <label for="" v-if="label">{{ label  }}</label>
     <input
       :type="inputType"
       :placeholder="placeholder"

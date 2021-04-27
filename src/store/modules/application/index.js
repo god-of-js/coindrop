@@ -1,4 +1,5 @@
 import api from "../../../plugins/api";
+import axios from "axios"
 export default {
   namespaced: true,
   state: {
@@ -6,7 +7,8 @@ export default {
     apiUrl: "http://localhost:4000",
     cryptoMarket: [],
     baseUrl: "coindrop.live",
-    sidebar: false
+    sidebar: false,
+    countries: []
   },
   mutations: {
     setCryptoMarket(state, param) {
@@ -14,6 +16,9 @@ export default {
     },
     sideBarStatus(state, param) {
       state.sidebar = param;
+    },
+    setCountries(state, countries) {
+      state.countries = countries
     }
   },
   actions: {
@@ -24,6 +29,11 @@ export default {
           console.log(request.data.data);
           commit("setCryptoMarket", request.data.data);
         });
+    },
+    async getCountries({ commit }) {
+      axios.get("https://countriesnow.space/api/v0.1/countries").then(result => {
+        commit("setCountries", result.data.data);
+      })
     }
   }
 };

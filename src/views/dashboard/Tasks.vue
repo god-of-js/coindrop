@@ -25,8 +25,7 @@ export default {
       return this.$store.state.tasks.tasks;
     }
   },
-  mounted() {
-  }
+  mounted() {}
 };
 </script>
 

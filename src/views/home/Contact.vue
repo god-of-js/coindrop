@@ -24,22 +24,22 @@ export default {
   name: "Contact",
   data() {
     return {
-      loading: false,
+      loading: false
     };
   },
   computed: {
     baseUrl() {
       return this.$store.state.app.baseUrl.toLowerCase();
-    },
+    }
   },
   methods: {
     sendMessage() {
       this.$notification.success({
         message: "Success",
-        description: "Support would reach out to you as soon as possible",
+        description: "Support would reach out to you as soon as possible"
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
