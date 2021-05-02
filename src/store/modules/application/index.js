@@ -1,5 +1,5 @@
 import api from "../../../plugins/api";
-import axios from "axios"
+import axios from "axios";
 export default {
   namespaced: true,
   state: {
@@ -18,7 +18,7 @@ export default {
       state.sidebar = param;
     },
     setCountries(state, countries) {
-      state.countries = countries
+      state.countries = countries;
     }
   },
   actions: {
@@ -31,9 +31,11 @@ export default {
         });
     },
     async getCountries({ commit }) {
-      axios.get("https://countriesnow.space/api/v0.1/countries").then(result => {
-        commit("setCountries", result.data.data);
-      })
+      axios
+        .get("https://countriesnow.space/api/v0.1/countries")
+        .then(result => {
+          commit("setCountries", result.data.data);
+        });
     }
   }
 };

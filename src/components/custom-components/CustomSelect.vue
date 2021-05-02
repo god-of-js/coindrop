@@ -8,7 +8,11 @@
       v-model="value"
       @change="$emit('update:input', value)"
     >
-      <option :value="getValue(option)" v-for="(option, index) in options" :key="index">
+      <option
+        :value="getValue(option)"
+        v-for="(option, index) in options"
+        :key="index"
+      >
         {{ getValue(option) }}
       </option>
     </select>
@@ -21,30 +25,30 @@ export default {
   name: "CustomSelect",
   props: {
     label: {
-      type: String,
+      type: String
     },
     objString: {
-        type: String
+      type: String
     },
     options: {
       type: Array,
-      default: () => [],
+      default: () => []
     },
     required: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data: () => {
     return {
-      value: "",
+      value: ""
     };
   },
   methods: {
-      getValue(obj) {
-          if(this.objString !== "") return get(obj, this.objString);
-          else return obj;
-      }
+    getValue(obj) {
+      if (this.objString !== "") return get(obj, this.objString);
+      else return obj;
+    }
   }
 };
 </script>
@@ -70,7 +74,7 @@ fieldset {
     }
   }
   label {
-  font-size: 0.7em;
+    font-size: 0.7em;
   }
 }
 </style>

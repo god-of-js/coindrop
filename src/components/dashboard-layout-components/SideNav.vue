@@ -23,36 +23,12 @@
 </template>
 
 <script>
+import routes from "@/helpers/routes.js";
 export default {
+  name: "SideNav",
   data() {
     return {
-      routes: [
-        {
-          path: "/dashboard",
-          name: "Dashboard",
-          icon: "mdi-view-dashboard"
-        },
-        {
-          path: "/payment",
-          name: "Payment",
-          icon: "mdi-cash-plus"
-        },
-        {
-          path: "/tasks",
-          name: "Tasks",
-          icon: "mdi-clipboard-text-outline"
-        },
-        // {
-        //   path: "/profile-settings",
-        //   name: "Settings",
-        //   icon: "mdi-account-cog"
-        // },
-        {
-          path: "/referrals",
-          name: "Referrals",
-          icon: "mdi-account-multiple-plus-outline"
-        }
-      ]
+      routes
     };
   },
   methods: {

@@ -18,10 +18,17 @@ export default {
       });
   },
   updateUserProfile({ state, dispatch }, data) {
-    return api(state.user.JWT)
-      .patch(`/user/update-user-profile/${state.user._id}`, data)
-      .then(response => {
-        dispatch("getUserProfile", response.data.data);
-      });
-  },
+    return new Promise(resolve => {
+      api(state.user.JWT)
+        .patch(`/user/update-user-profile/${state.user._id}`, data)
+        .then(response => {
+          dispatch("getUserProfile", response.data.data);
+          resolve(response.data.data);
+        })
+        .catch(err => {
+          resolve(err);
+          throw new Error(err);
+        });
+    });
+  }
 };

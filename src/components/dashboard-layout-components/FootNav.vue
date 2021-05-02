@@ -20,32 +20,12 @@
 </template>
 
 <script>
+import routes from "@/helpers/routes";
 export default {
   name: "FootNav",
   data() {
     return {
-      routes: [
-        {
-          path: "/dashboard",
-          name: "Dashboard",
-          icon: "mdi-account"
-        },
-        {
-          path: "/payment",
-          name: "Payment",
-          icon: "mdi-cash-plus"
-        },
-        {
-          path: "/referrals",
-          name: "Referrals",
-          icon: "mdi-account-multiple-plus-outline"
-        },
-        {
-          path: "/tasks",
-          name: "Tasks",
-          icon: "mdi-clipboard-text-outline"
-        }
-      ]
+      routes
     };
   },
   methods: {

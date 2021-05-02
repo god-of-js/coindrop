@@ -97,6 +97,10 @@ export default {
     {
       path: "/profile-settings",
       component: () => import("@/views/dashboard/Settings.vue")
+    },
+    {
+      path: "/verify-account",
+      component: () => import("@/views/dashboard/settings/VerifyAccount.vue")
     }
   ],
   beforeEnter(to, from, next) {
