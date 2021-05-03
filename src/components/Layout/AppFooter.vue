@@ -29,7 +29,9 @@
             <router-link to="/why-us" id="link">Why Us</router-link>
           </li>
           <li>
-            <router-link to="/faqs" id="link">Privacy Policy</router-link>
+            <router-link to="/privacy-policy" id="link"
+              >Privacy Policy</router-link
+            >
           </li>
           <li>
             <router-link to="/terms" id="link"

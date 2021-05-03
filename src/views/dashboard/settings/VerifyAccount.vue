@@ -123,7 +123,6 @@ export default {
         if (this.data.avatar) {
           this.data.avatar = await this.uploadImage(this.data.avatar);
         }
-        console.log(this.data);
         await this.$store.dispatch("user/updateUserProfile", this.data);
         this.loading = false;
       } catch (err) {

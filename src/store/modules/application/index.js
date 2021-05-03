@@ -4,7 +4,6 @@ export default {
   namespaced: true,
   state: {
     appName: "CoinDrop",
-    apiUrl: "http://localhost:4000",
     cryptoMarket: [],
     baseUrl: "coindrop.live",
     sidebar: false,

@@ -26,13 +26,18 @@ export default {
     },
     {
       path: "/terms",
-      name: "FAQs",
+      name: "TermsAndConditions",
       component: () => import("@/views/home/TermsAndConditions.vue")
     },
     {
       path: "/why-us",
       name: "WhyUs",
       component: () => import("@/views/home/WhyUs.vue")
+    },
+    {
+      path: "/privacy-policy",
+      name: "PrivacyPolicy",
+      component: () => import("@/views/home/PrivacyPolicy.vue")
     }
   ]
 };
