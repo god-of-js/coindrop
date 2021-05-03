@@ -26,13 +26,15 @@
             <router-link to="/about" id="link">About</router-link>
           </li>
           <li>
-            <router-link to="/faqs" id="link">Why Us</router-link>
+            <router-link to="/why-us" id="link">Why Us</router-link>
           </li>
           <li>
             <router-link to="/faqs" id="link">Privacy Policy</router-link>
           </li>
           <li>
-            <router-link to="/faqs" id="link">Terms and conditions</router-link>
+            <router-link to="/terms" id="link"
+              >Terms and conditions</router-link
+            >
           </li>
         </ul>
       </v-col>

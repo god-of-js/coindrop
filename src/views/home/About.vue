@@ -1,7 +1,7 @@
 <template>
   <div class="about pt-16">
     <v-col md="8" class="mx-auto" sm="11">
-      <h1 class="text-center">{{ appName }}</h1>
+      <h1 class="text-center">About {{ appName }}</h1>
       <p>
         Welcome to {{ appName }}, we are dedicated to giving you the best
         services and profits with a focus on SafeMoon mining.
