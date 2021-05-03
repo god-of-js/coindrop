@@ -73,6 +73,7 @@ export default {
   methods: {
     async register() {
       this.loading = true;
+      this.data.email = this.data.email.toLowerCase();
       await this.$store.dispatch("auth/register", this.data);
       this.loading = false;
     }
