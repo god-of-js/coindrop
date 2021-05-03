@@ -10,14 +10,7 @@
           reserved.</span
         >
         <div class="copy-content pt-5">
-          <input
-            type="text"
-            class="mr-4"
-            v-model="support"
-            id="copy-item"
-            disabled
-          />
-          <button class="mdi mdi-content-copy" @click="initiateCopy"></button>
+          <a :href="`mailto:${support}`">{{ support }}</a>
         </div>
       </v-col>
       <v-col md="2" sm="12" class="services">
@@ -33,15 +26,27 @@
             <router-link to="/about" id="link">About</router-link>
           </li>
           <li>
-            <!-- <router-link to="/faqs" id="link">FAQ's</router-link> -->
+            <router-link to="/faqs" id="link">Why Us</router-link>
+          </li>
+          <li>
+            <router-link to="/faqs" id="link">Privacy Policy</router-link>
+          </li>
+          <li>
+            <router-link to="/faqs" id="link">Terms and conditions</router-link>
           </li>
         </ul>
       </v-col>
-      <v-col md="2" sm="12" class="contact">
+      <v-col md="2" sm="6" class="contact">
         <b>Contact</b>
         <ul>
           <li>
             <router-link to="/contact" id="link">Contact</router-link>
+          </li>
+          <li>
+            <router-link to="/faqs" id="link">Contact sales</router-link>
+          </li>
+          <li>
+            <router-link to="/faqs" id="link">FAQ's</router-link>
           </li>
         </ul>
       </v-col>

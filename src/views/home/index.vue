@@ -30,7 +30,7 @@
           We combine the processing power of thousands of computers to run
           complex distributed cryptocurrency computations. Mining crypto
           currency is difficult, hence we created this platform to simplify the
-          process of mining around the safemoon eco-system.
+          process of mining from the safemoon eco-system.
           <b>{{ appName }}</b> works in the background and pays you based on the
           calculations done over a period of time.
         </p>
@@ -70,6 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/styles/colors.scss";
+@import "../../assets/styles/sizes.scss";
 .home {
   background: $secondary-background;
 }
@@ -100,5 +101,19 @@ export default {
   color: $primary-white;
   font-weight: bold;
   font-size: 1.7em;
+}
+@media screen and (max-width: $tablet-small-width) {
+  .intro {
+    padding: 3%;
+    h1 {
+      font-size: 2em;
+    }
+    .subtitle {
+      font-size: 1.2em;
+    }
+    p {
+      font-size: 0.9em;
+    }
+  }
 }
 </style>

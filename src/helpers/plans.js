@@ -5,10 +5,10 @@ export const plans = [
     btnTxt: "",
     type: "free",
     advantages: [
-      "hashrate worth 10.7$ safemoon Token",
+      "Hashrate worth 10.7$ Safemoon",
       "Plan duration of 7 days",
       "ROI of 50%",
-      "Minimum withdrawal of $75 worth of safemoon"
+      "Minimum withdrawal of $75 worth of Safemoon"
     ]
   },
   {
@@ -19,7 +19,7 @@ export const plans = [
       "Hash Rate worth $107.14 worth of Safemoon",
       "Plan duration of 7 days",
       "ROI of 50%",
-      "Minimum withdrawal of $750 worth of safeMoon token"
+      "Minimum withdrawal of $750 worth of Safemoon"
     ]
   },
   {
@@ -30,7 +30,7 @@ export const plans = [
       "Hash Rate worth $1,071 worth of Safemoon",
       "Plan duration of 7 days",
       "ROI of 50%",
-      "Minimum withdrawal of $7,500 worth of Safemoon token"
+      "Minimum withdrawal of $7,500 worth of Safemoon"
     ]
   },
   {
@@ -38,7 +38,7 @@ export const plans = [
     price: "50,000",
     type: "premium",
     advantages: [
-      "Hash Rate of $7,143 worth of safemoon",
+      "Hash Rate of $7,143 worth of Safemoon",
       "Plan duration of 14 days",
       "Total return 200%($100,000)",
       "Minimum withdrawal of $100,000 dollar worth of Safemoon."
@@ -52,7 +52,7 @@ export const plans = [
       "Hash Rate of $5,000 dollars worth of Safemoon",
       "Unlimited duration(200% after 14 days)",
       "Plan duration of 1 day",
-      "Asset Protection",
+      "100% Asset Protection",
       "Minimum withdrawal of $150,000 worth of safemoon"
     ]
   }

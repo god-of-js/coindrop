@@ -23,6 +23,16 @@ export default {
       path: "/faqs",
       name: "FAQs",
       component: () => import("@/views/home/FAQs.vue")
+    },
+    {
+      path: "/terms",
+      name: "FAQs",
+      component: () => import("@/views/home/TermsAndConditions.vue")
+    },
+    {
+      path: "/why-us",
+      name: "WhyUs",
+      component: () => import("@/views/home/WhyUs.vue")
     }
   ]
 };
