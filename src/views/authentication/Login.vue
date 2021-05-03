@@ -63,7 +63,6 @@ export default {
       this.loading = true;
       this.data.email = this.data.email.toLowerCase();
       await this.$store.dispatch("auth/login", this.data);
-      // alert("done");
       this.loading = false;
     }
   }
