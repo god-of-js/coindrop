@@ -1,7 +1,7 @@
 <template>
   <v-dialog
     id="modal"
-    v-model="dialog"
+    v-model="modalIsActive"
     :fullscreen="fullscreen"
     max-width="400"
     overlay-color="rgba(55, 71, 79, 0.2)"
@@ -17,12 +17,12 @@
 export default {
   name: "ModalWrap",
   computed: {
-    activeModal() {
-      return this.$store.state.modal.activeModal;
+    modalIsActive() {
+      return this.$store.state.modal.modalIsActive;
     },
     dialog: {
       get() {
-        return !!this.activeModal;
+        return this.modalIsActive;
       },
       set() {
         this.$store.commit("modal/setActiveModal", {});

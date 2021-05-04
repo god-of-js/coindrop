@@ -1,7 +1,7 @@
 <template>
   <footer class="d-flex pa-5">
     <v-row class="pa-0 ma-0">
-      <v-col md="3" sm="12">
+      <v-col md="3" sm="6" xs="6" cols="12">
         <router-link to="/">
           <h1 v-text="appName" class="app-name pa-0 ma-0"
         /></router-link>
@@ -13,13 +13,13 @@
           <a :href="`mailto:${support}`">{{ support }}</a>
         </div> -->
       </v-col>
-      <v-col md="2" sm="12" class="services">
+      <v-col md="2" sm="6" xs="6" cols="12" class="services">
         <b>Services</b>
         <ul>
           <li>SafeMoon Pool</li>
         </ul>
       </v-col>
-      <v-col md="2" sm="12" class="company">
+      <v-col md="2" sm="6" xs="6" cols="12" class="company">
         <b>Company</b>
         <ul>
           <li>
