@@ -39,6 +39,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/styles/colors.scss";
+main {
+  position: relative;
+}
 .dashboard-content {
   background: $secondary-background;
   .half-width {
