@@ -33,11 +33,11 @@
               >Privacy Policy</router-link
             >
           </li>
-          <li>
+          <!-- <li>
             <router-link to="/terms" id="link"
               >Terms and conditions</router-link
             >
-          </li>
+          </li> -->
         </ul>
       </v-col>
       <v-col md="2" sm="6" class="contact">
@@ -46,9 +46,9 @@
           <li>
             <router-link to="/contact" id="link">Contact</router-link>
           </li>
-          <li>
+          <!-- <li>
             <router-link to="/faqs" id="link">Contact sales</router-link>
-          </li>
+          </li> -->
           <li>
             <router-link to="/faqs" id="link">FAQ's</router-link>
           </li>
