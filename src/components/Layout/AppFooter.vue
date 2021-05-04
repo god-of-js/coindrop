@@ -9,9 +9,9 @@
           >&copy; 2018 - {{ checkYear() }} {{ baseUrl }}. All rights
           reserved.</span
         >
-        <div class="copy-content pt-5">
+        <!-- <div class="copy-content pt-5">
           <a :href="`mailto:${support}`">{{ support }}</a>
-        </div>
+        </div> -->
       </v-col>
       <v-col md="2" sm="12" class="services">
         <b>Services</b>
