@@ -4,6 +4,7 @@
       <li
         v-for="(route, index) in routes"
         :key="index"
+        :color="checkActiveRoute(route.path) ? '#c99400' : '#707A8A'"
         class="d-flex align-center justify-center"
       >
         <router-link
@@ -30,6 +31,9 @@ export default {
   },
   methods: {
     checkActiveRoute(path) {
+      console.log(
+        path === this.$route.path || path === this.$route.meta.parentRoute
+      );
       return path === this.$route.path || path === this.$route.meta.parentRoute;
     },
     logOut() {

@@ -39,8 +39,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/styles/colors.scss";
+@import "../assets/styles/sizes.scss";
 main {
   position: relative;
+  // padding-bottom: 13%;
 }
 .dashboard-content {
   background: $secondary-background;
