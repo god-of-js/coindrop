@@ -22,7 +22,7 @@
       ></router-link>
     </section>
     <section class="d-flex pa-12  justify-space-between">
-      <div :class="[smallScreen ? 'text-center' : '', 'col-lg-6 col-sm-12']">
+      <v-col :class="[smallScreen ? 'text-center' : '']" cols="12" sm="12" md="6" lg="6">
         <h1>
           Why mine with <b>{{ appName }}</b>
         </h1>
@@ -34,7 +34,7 @@
           <b>{{ appName }}</b> works in the background and pays you based on the
           calculations done over a period of time.
         </p>
-      </div>
+      </v-col>
       <img
         src="@/assets/images/image.png"
         alt="dashboard image"
