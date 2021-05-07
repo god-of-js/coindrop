@@ -19,6 +19,10 @@ export default {
       this.$emit("recieveImage", file);
       this.readImage(file);
     },
+    droppedFile(e) {
+      const file = e.dataTransfer.files;
+      this.checkImage(...file);
+    },
     uploadImage(file) {
       return new Promise((resolve, reject) => {
         const formData = new FormData();

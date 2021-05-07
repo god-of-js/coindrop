@@ -50,6 +50,8 @@
             @data="e => (data.address = e)"
             :placeholder="user.address"
           />
+
+          <custom-image-upload />
           <custom-button class="mt-4" :loading="loading"
             >Verify Account</custom-button
           >
@@ -62,6 +64,7 @@
 <script>
 import uploadImage from "@/mixins/uploadImage.js";
 import CustomAvatar from "@/components/custom-components/CustomAvatar.vue";
+import CustomImageUpload from "@/components/custom-components/CustomImageUpload.vue";
 export default {
   mixins: [uploadImage],
   data: () => {
@@ -102,7 +105,8 @@ export default {
     this.$store.dispatch("app/getCountries");
   },
   components: {
-    CustomAvatar
+    CustomAvatar,
+    CustomImageUpload
   },
   methods: {
     async updateProfile() {
