@@ -3,7 +3,7 @@ export const plans = [
     title: "Basic",
     price: "50",
     btnTxt: "",
-    type: "free",
+    type: "basic",
     advantages: [
       "Hashrate worth 10.7$ Safemoon",
       "Plan duration of 7 days",

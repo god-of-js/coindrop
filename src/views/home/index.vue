@@ -22,7 +22,13 @@
       ></router-link>
     </section>
     <section class="d-flex pa-12  justify-space-between">
-      <v-col :class="[smallScreen ? 'text-center' : '']" cols="12" sm="12" md="6" lg="6">
+      <v-col
+        :class="[smallScreen ? 'text-center' : '']"
+        cols="12"
+        sm="12"
+        md="6"
+        lg="6"
+      >
         <h1>
           Why mine with <b>{{ appName }}</b>
         </h1>
