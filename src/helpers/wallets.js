@@ -2,7 +2,7 @@ export default [
   {
     name: "ETH",
     fullName: "Ethereum",
-    wallet: "0xD49Bc386D4B2F24529643A17458eFfE37801745B"
+    wallet: "0x27262AA66E092341076D2961c5A7BEA5e6A39a23"
   },
   {
     name: "BTC",
