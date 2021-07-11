@@ -8,7 +8,7 @@
         {{
           withdrawalRequest.status === "pending"
             ? "Your request is yet to be validated. Keep an eye on your payment portfolio"
-            : withdrawalRequest.reason
+            : "your withdrawal has been confirmed. "
         }}
       </p>
     </section>
