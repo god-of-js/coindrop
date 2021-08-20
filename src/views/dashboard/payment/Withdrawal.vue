@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import dateFormatter from "@/mixins/dateFormatter.js";
 export default {
   computed: {
     withdrawalRequest() {
