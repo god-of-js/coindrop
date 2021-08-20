@@ -15,7 +15,7 @@
         <tbody>
           <tr v-for="(payment, index) in withdrawalRequests" :key="index">
             <td>{{ payment.amount }}</td>
-            <td>{{ payment.coin }}</td>
+            <td>{{ (payment.coin).toLocaleString() }}</td>
             <td>{{ returnDate(payment.createdAt) }}</td>
             <td>{{ payment.status }}</td>
             <td>
