@@ -38,6 +38,7 @@
 <script>
 import dateFormatter from "@/mixins/dateFormatter.js";
 export default {
+  mixins: [dateFormatter],
   computed: {
     withdrawalRequest() {
       return this.$store.state.payment.withdrawalRequest;
