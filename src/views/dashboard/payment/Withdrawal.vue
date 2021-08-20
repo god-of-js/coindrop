@@ -17,7 +17,7 @@
         <b>Status: </b> <span>{{ withdrawalRequest.status }} </span>
       </div>
       <div class="pb-3">
-        <b>Requested Amount: </b> <span>{{ withdrawalRequest.amount }} </span>
+        <b>Transfered Amount: </b> <span>{{ (withdrawalRequest.amount).toLocaleString() }} </span>
       </div>
       <div class="pb-3">
         <b>Crypto Address: </b>
