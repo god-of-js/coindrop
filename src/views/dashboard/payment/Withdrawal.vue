@@ -36,9 +36,7 @@
 </template>
 
 <script>
-import dateFormatter from "@/mixins/dateFormatter.js";
 export default {
-  mixins: [dateFormatter],
   computed: {
     withdrawalRequest() {
       return this.$store.state.payment.withdrawalRequest;
@@ -49,12 +47,11 @@ export default {
       id: this.$route.params.id
     });
   },
-  //methods: {
-   // returnDate(date) {
-     // const data = new Date(date);
-     // return `${data.getDay()}/${data.getMonth()}/${data.getFullYear()}`;
-    //}
-  //}
+  methods: {
+    returnDate(date) {
+      return new Date(date).toDateString();
+    }
+  }
 };
 </script>
 
