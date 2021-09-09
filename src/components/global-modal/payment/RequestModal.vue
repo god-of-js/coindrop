@@ -23,7 +23,7 @@
       />
       <crypto-selector
         @selectedcoin="e => (data.coin = e)"
-        :coins="['Safemoon']"
+    
       />
       <custom-button class="mt-4" :inactive="checkValues" :loading="loading"
         >Withdraw Funds
