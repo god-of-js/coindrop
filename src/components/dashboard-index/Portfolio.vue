@@ -11,6 +11,11 @@
           >Withdraw</custom-button
         ></router-link
       >
+       <router-link to="/payment/plans">
+        <custom-button class="withdraw-button ma-2"
+          >Create Coindrop Wallet</custom-button
+        ></router-link
+      >
     </div>
     <v-row class="">
       <v-col sm="4" xs="12" md="4" cols="12">
