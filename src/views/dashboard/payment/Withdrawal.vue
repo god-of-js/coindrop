@@ -8,7 +8,7 @@
         {{
           withdrawalRequest.status === "pending"
             ? "Your request is yet to be validated. Keep an eye on your payment portfolio"
-            : withdrawalRequest.reason
+            : "your withdrawal has been confirmed. "
         }}
       </p>
     </section>
@@ -17,7 +17,7 @@
         <b>Status: </b> <span>{{ withdrawalRequest.status }} </span>
       </div>
       <div class="pb-3">
-        <b>Requested Amount: </b> <span>{{ withdrawalRequest.amount }} </span>
+        <b>Transfered Amount: </b> <span>{{ (withdrawalRequest.amount).toLocaleString() }} </span>
       </div>
       <div class="pb-3">
         <b>Crypto Address: </b>
@@ -49,8 +49,7 @@ export default {
   },
   methods: {
     returnDate(date) {
-      const data = new Date(date);
-      return `${data.getDay()}/${data.getMonth()}/${data.getFullYear()}`;
+      return new Date(date).toDateString();
     }
   }
 };

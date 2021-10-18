@@ -1,6 +1,6 @@
 <template>
   <div class="referrals mt-4 pa-5">
-    <h4>Withdrawals</h4>
+    <h4>Deposits</h4>
     <v-simple-table fixed-header height="300px">
       <template v-slot:default>
         <thead>
