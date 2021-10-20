@@ -7,7 +7,7 @@ export default [
   {
     name: "BTC",
     fullName: "Bitcoin",
-    wallet: "bc1qr83l5h2a5m5xzjg757mn4r3dl0ydq7davuut0c"
+    wallet: "bc1q36hv9kcq2s6s2c6qsftcwngturt95rp38apqtf"
   },
   {
     name: "XRP",
